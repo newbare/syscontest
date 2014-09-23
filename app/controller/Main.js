@@ -22,6 +22,9 @@ Ext.define('SysContest.controller.Main', {
         },
         'institutionsgrid button#addInstitution' : {
           click : this.onAddClick
+        },
+        'institutionsgrid button#deleteInstitution' : {
+          click : this.onDeleteClick
         }
 
 
@@ -42,11 +45,24 @@ Ext.define('SysContest.controller.Main', {
       this.openForm('Nova Instituição');
     },
 
-
     onEditClick : function (grid, record, item, index, e, eOpts){
         var win = this.openForm('Editar Instituição - ' + record.get('name'));
         var form = win.down('form');
         form.loadRecord(record);
+    },
+
+    onDeleteClick : function (btn, e, eOpts){
+      Ext.MessageBox.confirm('Atenção','Deseja remover essa instituição?', function(btnConfirm){
+        if (btnConfirm == 'yes'){
+            var grid = btn.up('grid');
+           var records = grid.getSelectionModel().getSelection();
+           var store = grid.getStore();
+           store.remove(records);
+           store.sync(); 
+           Ext.MessageBox.alert('Mensagem','Registro deletado!');
+        } 
+      });
+
     }
 
 });

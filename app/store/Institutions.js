@@ -8,10 +8,10 @@ Ext.define('SysContest.store.Institutions',{
 	 proxy : {
 	 		type : 'ajax',
 	 		api : {
-	 			 create  : 'php/createInstitution.php',
-	 			 read    : 'php/listInstitutions.php',
-	 			 update  : 'php/updateInstitution.php',
-	 			 destroy : 'php/deleteInstitution.php'
+	 			 create  : 'php/institution/createInstitution.php',
+	 			 read    : 'php/institution/listInstitutions.php',
+	 			 update  : 'php/institution/updateInstitution.php',
+	 			 destroy : 'php/institution/deleteInstitution.php'
 	 		},
 	 		reader : {
 	 			type : 'json',

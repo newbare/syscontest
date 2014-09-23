@@ -1,6 +1,6 @@
 <?php
 
- include('connect.php');
+ include('../connect.php');
  
   $start = $_REQUEST['start'];
   $limit = $_REQUEST['limit'];
