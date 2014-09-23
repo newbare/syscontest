@@ -43,6 +43,7 @@ Ext.define ('SysContest.view.institution.InstitutionsGrid',{
 	 		store : 'SysContest.store.Institutions',
 	 		dock : 'bottom',
 	 		displayInfo : 'true',
+	 		displayMsg: 'Mostrando Instituições {0} - {1} de {2}',
 	 		emptyMsg : 'Nenhuma Instituição foi Cadastrada.'
 	 	}
 	 ]

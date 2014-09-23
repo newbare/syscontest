@@ -23,5 +23,5 @@ Ext.define('SysContest.store.Institutions',{
 	 			encode : true
 	 		}
 	 },
-	 autoLoad : true,
+	 //autoLoad : true,
 });
