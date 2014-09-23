@@ -3,7 +3,8 @@ Ext.define('SysContest.view.institution.InstitutionsForm',{
 		alias  : 'widget.institutionsform',
 
 		heigth : 100,
-		width  : 350,
+		width  : 500,
+		modal  : true,
 		layout : 'fit',
 	  iconCls : 'icon-company',
 	  title : 'Editar/Criar Instituição',

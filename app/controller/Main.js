@@ -17,7 +17,8 @@ Ext.define('SysContest.controller.Main', {
     init : function (application){
       this.control({
         'institutionsgrid' : {
-           render : this.onGridRender
+           render : this.onGridRender,
+           itemdblclick : this.onEditClick
         },
         'institutionsgrid button#addInstitution' : {
           click : this.onAddClick
@@ -39,6 +40,13 @@ Ext.define('SysContest.controller.Main', {
 
     onAddClick : function (btn , e, eOpts){
       this.openForm('Nova Instituição');
+    },
+
+
+    onEditClick : function (grid, record, item, index, e, eOpts){
+        var win = this.openForm('Editar Instituição - ' + record.get('name'));
+        var form = win.down('form');
+        form.loadRecord(record);
     }
 
 });
