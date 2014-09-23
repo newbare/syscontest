@@ -7,7 +7,7 @@ $server = "localhost";
 $user = "root";
 
 //database password
-$password = '';
+$password = '1234';
 
 //database name
 $dbName = 'syscontest';
