@@ -12,5 +12,19 @@ Ext.define('SysContest.controller.Main', {
     views : [
        'SysContest.view.institution.InstitutionsGrid',
        'SysContest.view.institution.InstitutionsForm'
-    ]
+    ],
+
+    init : function (application){
+      this.control({
+        'institutionsgrid' : {
+           render : this.onGridRender
+        }
+
+      });
+    },
+
+    onGridRender : function (grid, eOpts){
+      grid.getStore().load();
+    }
+
 });

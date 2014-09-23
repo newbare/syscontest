@@ -3,7 +3,7 @@ Ext.define ('SysContest.view.institution.InstitutionsGrid',{
 	 alias : 'widget.institutionsgrid',
 	 store : 'SysContest.store.Institutions',
 	 title : 'Instituições Cadastradas',
-	 iconCls : 'icon-grid',
+	 iconCls : 'icon-company',
 
 	 columns : [
 	 		{
@@ -28,13 +28,13 @@ Ext.define ('SysContest.view.institution.InstitutionsGrid',{
 	 				xtype : 'button',
 	 				text  : 'Adicionar',
 	 				itemId : 'addInstitution',
-	 				iconCls : 'icon-add'
+	 				iconCls : 'icon-plus'
 	 			},
 	 			{
 	 				xtype  : 'button',
 	 				text   : 'Excluir',
 	 				itemId : 'deleteInstitution',
-	 				iconCls : 'icon-delete'
+	 				iconCls : 'icon-trash'
 	 			}
 
 	 		]
