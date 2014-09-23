@@ -25,8 +25,10 @@ Ext.define('SysContest.controller.Main', {
         },
         'institutionsgrid button#deleteInstitution' : {
           click : this.onDeleteClick
+        },
+        'institutionsform button#cancelInstitution' : {
+          click : this.onCancelClick
         }
-
 
       });
     },
@@ -63,6 +65,13 @@ Ext.define('SysContest.controller.Main', {
         } 
       });
 
+    },
+
+    onCancelClick : function (btn, e, eOpts){
+      var win = btn.up('window');
+      var form = win.down('form');
+      form.getForm().reset();
+      win.close();
     }
 
 });
