@@ -4,7 +4,9 @@ Ext.define('SysContest.Application', {
     extend: 'Ext.app.Application',
 
     requires : [
-            'Ext.toolbar.Paging'
+            'Ext.toolbar.Paging',
+            'Ext.form.Panel',
+            'Ext.form.field.Hidden'
     ],
 
     views: [

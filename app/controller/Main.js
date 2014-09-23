@@ -18,13 +18,27 @@ Ext.define('SysContest.controller.Main', {
       this.control({
         'institutionsgrid' : {
            render : this.onGridRender
+        },
+        'institutionsgrid button#addInstitution' : {
+          click : this.onAddClick
         }
+
 
       });
     },
 
     onGridRender : function (grid, eOpts){
       grid.getStore().load();
+    },
+
+    openForm : function (title) {
+       var win = Ext.create('SysContest.view.institution.InstitutionsForm');
+       win.setTitle(title);
+       return win;
+    },
+
+    onAddClick : function (btn , e, eOpts){
+      this.openForm('Nova Instituição');
     }
 
 });
