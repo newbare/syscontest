@@ -28,6 +28,9 @@ Ext.define('SysContest.controller.Main', {
         },
         'institutionsform button#cancelInstitution' : {
           click : this.onCancelClick
+        },
+        'institutionsform button#saveInstitution' : {
+          click : this.onSaveClick
         }
 
       });
@@ -72,6 +75,26 @@ Ext.define('SysContest.controller.Main', {
       var form = win.down('form');
       form.getForm().reset();
       win.close();
+    },
+
+    onSaveClick : function (btn, e, eOpts){
+      var win = btn.up('window'),
+          form = win.down('form'),
+          values = form.getValues(),
+          record = form.getRecord(),
+          grid = Ext.ComponentQuery.query('institutionsgrid')[0],
+          store = grid.getStore();
+
+          if (record){
+            record.set(values);
+          }else{
+            var institution = Ext.create('SysContest.model.Institution',{
+              name : values.name
+            });
+            store.insert(0,institution);
+          }
+          store.sync();
+          win.close();
     }
 
 });

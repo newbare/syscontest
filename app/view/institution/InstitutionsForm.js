@@ -6,8 +6,8 @@ Ext.define('SysContest.view.institution.InstitutionsForm',{
 		width  : 500,
 		modal  : true,
 		layout : 'fit',
-	  iconCls : 'icon-company',
-	  title : 'Editar/Criar Instituição',
+	 iconCls : 'icon-company',
+	 title : 'Editar/Criar Instituição',
 		autoShow : true,
 
 		items : [
