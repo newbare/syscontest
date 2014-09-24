@@ -10,6 +10,7 @@ Ext.define('SysContest.controller.Main', {
     ],
 
     views : [
-       'SysContest.view.institution.InstitutionsGrid'
+       'SysContest.view.institution.InstitutionsGrid',
+       'SysContest.view.institution.InstitutionsForm'
     ]
 });

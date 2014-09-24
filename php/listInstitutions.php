@@ -2,12 +2,12 @@
 
  include('connect.php');
  
-  //$start = $_REQUEST['start'];
-  //$limit = $_REQUEST['limit'];
+  $start = $_REQUEST['start'];
+  $limit = $_REQUEST['limit'];
 
-//	$queryString = "SELECT * FROM institution LIMIT $start,  $limit";
+	$queryString = "SELECT * FROM institution LIMIT $start,  $limit";
 
- 	$queryString = "SELECT * FROM institution";
+ 	//$queryString = "SELECT * FROM institution";
 
 	//consulta sql
 	$query = mysql_query($queryString) or die(mysql_error());

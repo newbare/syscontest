@@ -25,3 +25,49 @@
 .icon-delete {
     background-image: url(../images/delete.png) !important;
 }
+
+.icon-company {
+    background-image: url(../images/company.png) !important;
+}
+
+.icon-company {
+    background-image: url(../images/company.gif) !important;
+}
+
+.icon-plus {
+    background-image: url(../images/plus.png) !important;
+}
+
+.icon-del {
+    background-image: url(../images/del.png) !important;
+}
+
+.icon-down {
+    background-image: url(../images/like.png) !important;
+}
+
+.icon-remove {
+    background-image: url(../images/remove.png) !important;
+}
+
+
+.icon-like {
+    background-image: url(../images/down.png) !important;
+}
+
+
+.icon-next {
+    background-image: url(../images/next.gif) !important;
+}
+
+.icon-ok {
+    background-image: url(../images/ok.gif) !important;
+}
+
+.icon-find {
+    background-image: url(../images/find.gif) !important;
+}
+
+.icon-trash {
+    background-image: url(../images/trash.gif) !important;
+}
