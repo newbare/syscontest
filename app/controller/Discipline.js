@@ -18,12 +18,25 @@ Ext.define('SysContest.controller.Discipline', {
         this.control({
           'disciplinesgrid' : {
              render : this.onGridRender
+          },
+           'disciplinesgrid button#addDiscipline' : {
+             click : this.onAddClick
           }
         });
     },
 
     onGridRender : function (grid, eOpts){
       grid.getStore().load();
+    },
+
+     openForm : function (title) {
+       var win = Ext.create('SysContest.view.discipline.DisciplinesForm');
+       win.setTitle(title);
+       return win;
+    },
+
+    onAddClick : function (btn , e, eOpts){
+      this.openForm('Nova Disciplina');
     }
   
 });
