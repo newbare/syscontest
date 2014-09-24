@@ -8,3 +8,11 @@ CREATE TABLE INSTITUTION (
 	CONSTRAINT institutionPKC PRIMARY KEY (idInstitution)
 );
 
+CREATE TABLE DISCIPLINE (
+	idDiscipline 		INT 		NOT NULL AUTO_INCREMENT,
+	name 				NVARCHAR(45),
+	CONSTRAINT 	disciplinePCK PRIMARY KEY (idDiscipline)
+);
+
+
+
