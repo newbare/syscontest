@@ -1,15 +1,16 @@
 <?php
 	//chama o arquivo de conexão com o bd
-	include("../conectar.php");
+	include("../connect.php");
 
 	$info = $_POST['data'];
 
-	$data = json_decode(stripslashes($info));
+	//$data = json_decode(stripslashes($info));
+	$data = json_decode($info);
 
-	$id = $data->id;
+	$id = $data->idInstitution;
 
 	//consulta sql
-	$query = sprintf("DELETE FROM institution WHERE id=%d",
+	$query = sprintf("DELETE FROM disciplina WHERE idDiscipline=%d",
 		mysql_real_escape_string($id));
 
 	$rs = mysql_query($query);
