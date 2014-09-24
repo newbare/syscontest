@@ -7,7 +7,7 @@
 	//$data = json_decode(stripslashes($info));
 	$data = json_decode($info);
 
-	$id = $data->idInstitution;
+	$id = $data->idDiscipline;
 
 	//consulta sql
 	$query = sprintf("DELETE FROM disciplina WHERE idDiscipline=%d",

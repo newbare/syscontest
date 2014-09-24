@@ -21,6 +21,9 @@ Ext.define('SysContest.controller.Discipline', {
           },
            'disciplinesgrid button#addDiscipline' : {
              click : this.onAddClick
+          },
+          'disciplinesgrid button#deleteDiscipline' : {
+            click : this.onDeleteClick
           }
         });
     },
@@ -37,6 +40,19 @@ Ext.define('SysContest.controller.Discipline', {
 
     onAddClick : function (btn , e, eOpts){
       this.openForm('Nova Disciplina');
+    },
+
+    onDeleteClick : function (btn, e, eOpts){
+      Ext.MessageBox.confirm('Atenção','Deseja remover essa Disciplina?', function(btnConfirm){
+        if (btnConfirm == 'yes'){
+           var grid = btn.up('grid'),
+               records = grid.getSelectionModel().getSelection(),
+               store = grid.getStore();
+           store.remove(records);
+           store.sync(); 
+           Ext.MessageBox.alert('Mensagem','Registro deletado!');
+        } 
+      });
     }
   
 });
