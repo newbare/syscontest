@@ -1,4 +1,4 @@
-Ext.define('SysContest.controller.Main', {
+Ext.define('SysContest.controller.Institution', {
     extend: 'Ext.app.Controller',
 
     models : [

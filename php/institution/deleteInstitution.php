@@ -4,7 +4,8 @@
 
 	$info = $_POST['data'];
 
-	$data = json_decode(stripslashes($info));
+	//$data = json_decode(stripslashes($info));
+	$data = json_decode($info);
 
 	$id = $data->idInstitution;
 

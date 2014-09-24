@@ -15,7 +15,7 @@ Ext.define('SysContest.Application', {
 
     controllers: [
         // TODO: add controllers here
-        'Main'
+        'Institution'
     ],
 
     stores: [
