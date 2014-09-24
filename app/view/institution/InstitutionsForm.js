@@ -3,9 +3,10 @@ Ext.define('SysContest.view.institution.InstitutionsForm',{
 		alias  : 'widget.institutionsform',
 
 		heigth : 100,
-		width  : 200,
+		width  : 350,
 		layout : 'fit',
-	//	iconCls : 'icon-company',
+	  iconCls : 'icon-company',
+	  title : 'Editar/Criar Instituição',
 		autoShow : true,
 
 		items : [
@@ -23,9 +24,33 @@ Ext.define('SysContest.view.institution.InstitutionsForm',{
 						{
 							xtype : 'textfield',
 							name : 'name',
-							fieldLabel : 'Nome da Instituição'
+							fieldLabel : 'Instituição'
 						}
 					]
 				}
-		]
+		],
+
+		dockedItems : [
+			{
+				xtype : 'toolbar',
+				dock : 'bottom',
+				layout : {
+					type : 'hbox',
+					pack : 'end'
+				},
+				
+			  items: [
+			   {
+					 xtype : 'button',
+					 text : 'Cancelar',
+					 itemId : 'cancelInstitution',
+					 iconCls : 'icon-del'
+			  	},
+				 {
+					xtype : 'button',
+					text : 'Salvar',
+					itemId : 'saveInstitution',
+					iconCls : 'icon-save'
+				}]
+		}]
 });
