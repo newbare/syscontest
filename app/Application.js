@@ -11,6 +11,7 @@ Ext.define('SysContest.Application', {
 
     views: [
         // TODO: add views here
+        
     ],
 
     controllers: [

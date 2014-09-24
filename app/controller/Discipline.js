@@ -10,8 +10,8 @@ Ext.define('SysContest.controller.Discipline', {
     ],
 
     views : [
-       'SysContest.view.discipline.DisciplinesGrid'
-       //'SysContest.view.institution.InstitutionsForm'
+       'SysContest.view.discipline.DisciplinesGrid',
+       'SysContest.view.discipline.DisciplinesForm'
     ],
 
     init : function (application) {
@@ -24,6 +24,6 @@ Ext.define('SysContest.controller.Discipline', {
 
     onGridRender : function (grid, eOpts){
       grid.getStore().load();
-    },
+    }
   
 });
