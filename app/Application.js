@@ -3,6 +3,10 @@ Ext.define('SysContest.Application', {
 
     extend: 'Ext.app.Application',
 
+    requires : [
+            'Ext.toolbar.Paging'
+    ],
+
     views: [
         // TODO: add views here
     ],
