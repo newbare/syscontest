@@ -1,4 +1,4 @@
-Ext.define ('SysContest.view.institution.DisciplinesGrid',{
+Ext.define ('SysContest.view.discipline.DisciplinesGrid',{
 	 extend : 'Ext.grid.Panel',
 	 alias : 'widget.disciplinesgrid',
 	 store : 'SysContest.store.Disciplines',

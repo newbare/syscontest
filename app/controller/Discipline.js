@@ -10,7 +10,7 @@ Ext.define('SysContest.controller.Discipline', {
     ],
 
     views : [
-       'SysContest.view.institution.DisciplinesGrid'
+       'SysContest.view.discipline.DisciplinesGrid'
        //'SysContest.view.institution.InstitutionsForm'
     ]
 

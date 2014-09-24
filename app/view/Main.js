@@ -3,7 +3,8 @@ Ext.define('SysContest.view.Main', {
     requires:[
         'Ext.tab.Panel',
         'Ext.layout.container.Border',
-        'SysContest.view.institution.InstitutionsGrid'
+        'SysContest.view.institution.InstitutionsGrid',
+        'SysContest.view.discipline.DisciplinesGrid'
     ],
     
     xtype: 'app-main',
@@ -31,7 +32,12 @@ Ext.define('SysContest.view.Main', {
             ]
         },
         {
-            title : 'DISCIPLINAS'
+            title : 'DISCIPLINAS',
+            items : [
+                {
+                    xtype : 'disciplinesgrid'
+                }
+            ]
         },
         {
             title : 'ASSUNTOS'
