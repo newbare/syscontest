@@ -3,16 +3,16 @@ Ext.define ('SysContest.view.institution.DisciplinesGrid',{
 	 alias : 'widget.disciplinesgrid',
 	 store : 'SysContest.store.Disciplines',
 	 title : 'Disciplinas Cadastradas',
-	 iconCls : 'icon-company',
+	 iconCls : 'icon-discipline',
 
 	 columns : [
 	 		{
 	 			text: 'ID',
 	 			width : 35,
-	 			dataIndex : 'idInstitution'
+	 			dataIndex : 'idDiscipline'
 	 		},
 	 		{
-	 			text  : 'Nome da Instituição',
+	 			text  : 'Nome da Disciplina',
 	 			width : 300,
 	 			flex : 1,
 	 			dataIndex : 'name'
@@ -27,24 +27,24 @@ Ext.define ('SysContest.view.institution.DisciplinesGrid',{
 	 			{
 	 				xtype : 'button',
 	 				text  : 'Adicionar',
-	 				itemId : 'addInstitution',
+	 				itemId : 'addDiscipline',
 	 				iconCls : 'icon-plus'
 	 			},
 	 			{
 	 				xtype  : 'button',
 	 				text   : 'Excluir',
-	 				itemId : 'deleteInstitution',
+	 				itemId : 'deleteDiscipline',
 	 				iconCls : 'icon-trash'
 	 			}
 
 	 		]
 	 	},{
 	 		xtype : 'pagingtoolbar',
-	 		store : 'SysContest.store.Institutions',
+	 		store : 'SysContest.store.Disciplines',
 	 		dock : 'bottom',
 	 		displayInfo : 'true',
-	 		displayMsg: 'Mostrando Instituições {0} - {1} de {2}',
-	 		emptyMsg : 'Nenhuma Instituição foi Cadastrada.'
+	 		displayMsg: 'Mostrando Disciplinas {0} - {1} de {2}',
+	 		emptyMsg : 'Nenhuma Disciplina foi Cadastrada.'
 	 	}
 	 ]
 });
