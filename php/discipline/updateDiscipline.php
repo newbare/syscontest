@@ -8,7 +8,7 @@
 	$data = json_decode($info);
 
 	$name = $data->name;
-	$id = $data->idInstitution;
+	$id = $data->idDiscipline;
 
 	//sql  query
 	$query = sprintf("UPDATE discipline SET name = '%s' WHERE idDiscipline=%d",

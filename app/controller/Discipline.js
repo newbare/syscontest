@@ -17,7 +17,8 @@ Ext.define('SysContest.controller.Discipline', {
     init : function (application) {
         this.control({
           'disciplinesgrid' : {
-             render : this.onGridRender
+             render : this.onGridRender,
+            itemdblclick : this.onEditClick
           },
            'disciplinesgrid button#addDiscipline' : {
              click : this.onAddClick
@@ -47,6 +48,12 @@ Ext.define('SysContest.controller.Discipline', {
 
     onAddClick : function (btn , e, eOpts){
       this.openForm('Nova Disciplina');
+    },
+
+    onEditClick : function (grid, record, item, index, e, eOpts){
+        var win = this.openForm('Editar Disciplina - ' + record.get('name'));
+        var form = win.down('form');
+        form.loadRecord(record);
     },
 
     onDeleteClick : function (btn, e, eOpts){
