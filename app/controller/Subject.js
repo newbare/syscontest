@@ -1,4 +1,4 @@
-Ext.define('SysContest.controller.Institution', {
+Ext.define('SysContest.controller.Subject', {
     extend: 'Ext.app.Controller',
 
     models : [
@@ -10,7 +10,7 @@ Ext.define('SysContest.controller.Institution', {
     ],
 
     views : [
-       'SysContest.view.Subject.SubjectsGrid'
+       'SysContest.view.subject.SubjectsGrid'
       // 'SysContest.view.institution.InstitutionsForm'
     ]
 

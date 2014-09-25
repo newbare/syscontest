@@ -1,4 +1,4 @@
-Ext.define ('SysContest.view.discipline.SubjectsGrid', {
+Ext.define ('SysContest.view.subject.SubjectsGrid', {
 	 extend : 'Ext.grid.Panel',
 	 alias : 'widget.subjectsgrid',
 	 store : 'SysContest.store.Subjects',
@@ -8,7 +8,7 @@ Ext.define ('SysContest.view.discipline.SubjectsGrid', {
 	 columns : [
 	 		{
 	 			text: 'ID',
-	 			width : 35,
+	 			width : 100,
 	 			dataIndex : 'idSubject'
 	 		},
 	 		{
@@ -19,7 +19,7 @@ Ext.define ('SysContest.view.discipline.SubjectsGrid', {
 	 		},
 	 		{
 	 			text : 'Disciplina ID',
-	 			width : 35,
+	 			width : 100,
 	 			dataIndex : 'idDiscipline'
 	 		}
 	 ],
@@ -49,7 +49,7 @@ Ext.define ('SysContest.view.discipline.SubjectsGrid', {
 	 		dock : 'bottom',
 	 		displayInfo : 'true',
 	 		displayMsg: 'Mostrando Assuntos {0} - {1} de {2}',
-	 		emptyMsg : 'Nenhuma Disciplina foi Cadastrada.'
+	 		emptyMsg : 'Nenhum Assunto foi Cadastrado.'
 	 	}
 	 ]
 });
