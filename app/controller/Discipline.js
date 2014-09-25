@@ -24,6 +24,9 @@ Ext.define('SysContest.controller.Discipline', {
           },
           'disciplinesgrid button#deleteDiscipline' : {
             click : this.onDeleteClick
+          },
+          'disciplinesform button#cancelDiscipline' : {
+            click : this.onCancelClick
           }
         });
     },
@@ -53,6 +56,13 @@ Ext.define('SysContest.controller.Discipline', {
            Ext.MessageBox.alert('Mensagem','Registro deletado!');
         } 
       });
+    },
+
+    onCancelClick : function (btn, e, eOpts){
+      var win = btn.up('window');
+      var form = win.down('form');
+      form.getForm().reset();
+      win.close();
     }
   
 });
