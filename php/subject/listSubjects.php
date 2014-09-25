@@ -5,21 +5,21 @@
   $start = $_REQUEST['start'];
   $limit = $_REQUEST['limit'];
 
-	$queryString = "SELECT * FROM discipline LIMIT $start,  $limit";
+	$queryString = "SELECT * FROM subject LIMIT $start,  $limit";
 
- 	//$queryString = "SELECT * FROM institution";
+	//$queryString = "SELECT * FROM subject";
 
-	//consulta sql
+	//sql query
 	$query = mysql_query($queryString) or die(mysql_error());
 
 	//faz um looping e cria um array com os campos da consulta
-	$disciplines = array();
-	while($discipline = mysql_fetch_assoc($query)) {
-	    $disciplines[] = $discipline;
+	$subjects = array();
+	while($subject = mysql_fetch_assoc($query)) {
+	    $subjects[] = $subject;
 	}
 
 	//consulta total de linhas na tabela
-	$queryTotal = mysql_query('SELECT count(*) as num FROM discipline') or die(mysql_error());
+	$queryTotal = mysql_query('SELECT count(*) as num FROM subject') or die(mysql_error());
 	$row = mysql_fetch_assoc($queryTotal);
 	$total = $row['num'];
 
@@ -27,5 +27,5 @@
 	echo json_encode(array(
 		"success" => mysql_errno() == 0,
 		"total" => $total,
-		"data" => $disciplines
+		"data" => $subjects
 	));
