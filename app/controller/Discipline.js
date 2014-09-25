@@ -27,7 +27,11 @@ Ext.define('SysContest.controller.Discipline', {
           },
           'disciplinesform button#cancelDiscipline' : {
             click : this.onCancelClick
-          }
+          },
+           'disciplinesform button#saveDiscipline' : {
+              click : this.onSaveClick
+           }
+
         });
     },
 
@@ -63,6 +67,26 @@ Ext.define('SysContest.controller.Discipline', {
       var form = win.down('form');
       form.getForm().reset();
       win.close();
+    },
+
+     onSaveClick : function (btn, e, eOpts){
+      var win = btn.up('window'),
+          form = win.down('form'),
+          values = form.getValues(),
+          record = form.getRecord(),
+          grid = Ext.ComponentQuery.query('disciplinesgrid')[0],
+          store = grid.getStore();
+
+          if (record){
+            record.set(values);
+          }else{
+            var discipline = Ext.create('SysContest.model.Discipline',{
+              name : values.name
+            });
+            store.insert(0,discipline);
+          }
+          store.sync();
+          win.close();
     }
   
 });

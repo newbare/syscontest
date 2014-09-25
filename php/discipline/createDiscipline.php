@@ -10,7 +10,7 @@
 	$name = $data->name;
 	
 	//sql query
-	$query = sprintf("INSERT INTO disciplina (name) values ('%s')",
+	$query = sprintf("INSERT INTO discipline (name) values ('%s')",
 		mysql_real_escape_string($name));
 
 	$rs = mysql_query($query);
