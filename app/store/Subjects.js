@@ -8,10 +8,10 @@ Ext.define('SysContest.store.Subjects',{
 	 proxy : {
 	 		type : 'ajax',
 	 		api : {
-	 			 create  : 'php/discipline/createSubject.php',
-	 			 read    : 'php/discipline/listSubjects.php',
-	 			 update  : 'php/discipline/updateSubject.php',
-	 			 destroy : 'php/discipline/deleteSubject.php'
+	 			 create  : 'php/subject/createSubject.php',
+	 			 read    : 'php/subject/listSubjects.php',
+	 			 update  : 'php/subject/updateSubject.php',
+	 			 destroy : 'php/subject/deleteSubject.php'
 	 		},
 	 		reader : {
 	 			type : 'json',

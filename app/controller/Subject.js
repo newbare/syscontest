@@ -12,6 +12,20 @@ Ext.define('SysContest.controller.Subject', {
     views : [
        'SysContest.view.subject.SubjectsGrid'
       // 'SysContest.view.institution.InstitutionsForm'
-    ]
+    ],
+
+     init : function (application){
+      this.control({
+        'subjectsgrid' : {
+           render : this.onGridRender,
+          // itemdblclick : this.onEditClick
+         }
+
+      });
+    },
+
+    onGridRender : function (grid, eOpts){
+      grid.getStore().load();
+    }
 
 });
