@@ -1,9 +1,17 @@
-Ext.define('SysContest.model.Subject',{
-	 extend : 'Ext.data.Model',
+Ext.define('SysContest.controller.Institution', {
+    extend: 'Ext.app.Controller',
 
-	 fields : [
-	 		{name : 'idSubject', type : 'int'},
-	 		{name : 'name', type : 'string'},
-	 		{name : 'idDiscipline' , type : 'int'}
-	 ]
+    models : [
+       'SysContest.model.Subject'
+    ],
+
+    stores : [
+       'SysContest.store.Subjects'
+    ],
+
+    views : [
+       'SysContest.view.Subject.SubjectsGrid'
+      // 'SysContest.view.institution.InstitutionsForm'
+    ]
+
 });
