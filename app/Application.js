@@ -6,7 +6,8 @@ Ext.define('SysContest.Application', {
     requires : [
             'Ext.toolbar.Paging',
             'Ext.form.Panel',
-            'Ext.form.field.Hidden'
+            'Ext.form.field.Hidden',
+            'Ext.form.field.ComboBox'
     ],
 
     views: [
