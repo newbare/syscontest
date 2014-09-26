@@ -42,7 +42,7 @@ Ext.define('SysContest.controller.Subject', {
     },
 
     onEditClick : function (grid, record, item, index, e, eOpts){
-        var win = this.openForm('Editar Disciplina - ' + record.get('name'));
+        var win = this.openForm('Editar Assunto - ' + record.get('name'));
         var form = win.down('form');
         form.loadRecord(record);
     }
