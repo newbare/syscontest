@@ -10,8 +10,8 @@ Ext.define('SysContest.controller.Subject', {
     ],
 
     views : [
-       'SysContest.view.subject.SubjectsGrid'
-      // 'SysContest.view.institution.InstitutionsForm'
+       'SysContest.view.subject.SubjectsGrid',
+        'SysContest.view.subject.SubjectsForm'
     ],
 
      init : function (application){
