@@ -12,6 +12,22 @@ Ext.define('SysContest.controller.Exam', {
     views : [
        'SysContest.view.exam.ExamesGrid'
        //'SysContest.view.discipline.DisciplinesForm'
-    ]
+    ],
+
+
+    init : function (application) {
+        this.control({
+          'examesgrid' : {
+             render : this.onGridRender
+            //itemdblclick : this.onEditClick
+          }
+          
+        });
+
+    },
+
+    onGridRender : function (grid, eOpts){
+      grid.getStore().load();
+    }
 
 });

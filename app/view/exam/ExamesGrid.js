@@ -29,12 +29,12 @@ Ext.define ('SysContest.view.exam.ExamesGrid',{
 	 		},
 	 		{
 	 			 text : 'Nível',
-	 			 width : 160,
+	 			 width : 120,
 	 			 dataIndex : 'level'
 	 		},
 	 		{
 	 			 text : 'Orgão',
-	 			 width : 250,
+	 			 width : 300,
 	 			 dataIndex : 'organ'
 	 		}
 	 ],
