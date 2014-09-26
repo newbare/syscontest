@@ -3,19 +3,39 @@ Ext.define ('SysContest.view.exam.ExamesGrid',{
 	 alias : 'widget.examesgrid',
 	 store : 'SysContest.store.Exames',
 	 title : 'Provas Cadastradas',
-	 iconCls : 'icon-discipline',
+	 iconCls : 'icon-exam',
 
 	 columns : [
 	 		{
-	 			text: 'ID',
-	 			width : 35,
-	 			dataIndex : 'idDiscipline'
+	 			text: 'ID Prova',
+	 			width : 50,
+	 			dataIndex : 'idExam'
 	 		},
 	 		{
-	 			text  : 'Nome da Disciplina',
-	 			width : 300,
-	 			flex : 1,
-	 			dataIndex : 'name'
+	 			text  : 'ID Instituição',
+	 			width : 50,
+	 			dataIndex : 'idInstitution'
+	 		},
+	 		{
+	 			text : 'Ano',
+	 			width : 30,
+	 			dataIndex : 'year'
+	 		},
+	 		{
+	 				text : 'Cargo',
+	 				width : 150,
+	 				flex : 1,
+	 				dataIndex : 'role' 
+	 		},
+	 		{
+	 			 text : 'Nível',
+	 			 width : 100,
+	 			 dataIndex : 'level'
+	 		},
+	 		{
+	 			 text : 'Orgão',
+	 			 width : 200,
+	 			 dataIndex : 'organ'
 	 		}
 	 ],
 
@@ -27,24 +47,24 @@ Ext.define ('SysContest.view.exam.ExamesGrid',{
 	 			{
 	 				xtype : 'button',
 	 				text  : 'Adicionar',
-	 				itemId : 'addDiscipline',
+	 				itemId : 'addExam',
 	 				iconCls : 'icon-plus'
 	 			},
 	 			{
 	 				xtype  : 'button',
 	 				text   : 'Excluir',
-	 				itemId : 'deleteDiscipline',
+	 				itemId : 'deleteExam',
 	 				iconCls : 'icon-trash'
 	 			}
 
 	 		]
 	 	},{
 	 		xtype : 'pagingtoolbar',
-	 		store : 'SysContest.store.Disciplines',
+	 		store : 'SysContest.store.Exames',
 	 		dock : 'bottom',
 	 		displayInfo : 'true',
-	 		displayMsg: 'Mostrando Disciplinas {0} - {1} de {2}',
-	 		emptyMsg : 'Nenhuma Disciplina foi Cadastrada.'
+	 		displayMsg: 'Mostrando Provas {0} - {1} de {2}',
+	 		emptyMsg : 'Nenhuma Prova foi Cadastrada.'
 	 	}
 	 ]
 });
