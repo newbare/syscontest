@@ -33,4 +33,11 @@ CREATE TABLE EXAM (
 	CONSTRAINT examFKT FOREIGN KEY (idInstitution) REFERENCES INSTITUTION(idInstitution)
 );
 
-
+CREATE TABLE QUESTION (
+	idQuestion			INT 		NOT NULL AUTO_INCREMENT,
+	idExam 				INT,
+	statement 			NVARCHAR(8500),
+	answer 				CHAR,
+	CONSTRAINT questionPKC PRIMARY KEY (idQuestion),
+	CONSTRAINT questionFKT FOREIGN KEY (idExam) REFERENCES EXAM (idExam)
+);
