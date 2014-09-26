@@ -7,15 +7,25 @@ Ext.define ('SysContest.view.question.QuestionsGrid',{
 
 	 columns : [
 	 		{
-	 			text: 'ID',
-	 			width : 35,
-	 			dataIndex : 'idDiscipline'
+	 			text: 'ID Questão',
+	 			width : 100,
+	 			dataIndex : 'idQuestion'
 	 		},
 	 		{
-	 			text  : 'Nome da Disciplina',
-	 			width : 300,
-	 			flex : 1,
-	 			dataIndex : 'name'
+	 			text  : 'ID Prova',
+	 			width : 100,
+	 			dataIndex : 'idExam'
+	 		},
+	 		{
+	 			 text : 'Enunciado da Questão',
+	 			 width : 300,
+	 			 flex : 1,
+	 			 dataIndex :'statement'
+	 		},
+	 		{
+	 			 texto : 'Resposta',
+	 			 width : 100,
+	 			 dataIndex : 'answer'
 	 		}
 	 ],
 
@@ -27,24 +37,24 @@ Ext.define ('SysContest.view.question.QuestionsGrid',{
 	 			{
 	 				xtype : 'button',
 	 				text  : 'Adicionar',
-	 				itemId : 'addDiscipline',
+	 				itemId : 'addQuestion',
 	 				iconCls : 'icon-plus'
 	 			},
 	 			{
 	 				xtype  : 'button',
 	 				text   : 'Excluir',
-	 				itemId : 'deleteDiscipline',
+	 				itemId : 'deleteQuestion',
 	 				iconCls : 'icon-trash'
 	 			}
 
 	 		]
 	 	},{
 	 		xtype : 'pagingtoolbar',
-	 		store : 'SysContest.store.Disciplines',
+	 		store : 'SysContest.store.Questions',
 	 		dock : 'bottom',
 	 		displayInfo : 'true',
-	 		displayMsg: 'Mostrando Disciplinas {0} - {1} de {2}',
-	 		emptyMsg : 'Nenhuma Disciplina foi Cadastrada.'
+	 		displayMsg: 'Mostrando Questões {0} - {1} de {2}',
+	 		emptyMsg : 'Nenhuma Questão foi Cadastrada.'
 	 	}
 	 ]
 });
