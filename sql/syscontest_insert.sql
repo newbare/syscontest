@@ -39,4 +39,82 @@ INSERT INTO DISCIPLINE (name) VALUES('REDES DE COMPUTADORES');
 -- INSERT DISCIPLINAS --
 
 
+-- INSERIR ASSUNTO (NAME, ID_DISCIPLINE) --
+INSERT INTO SUBJECT (name, idDiscipline) VALUES ('fonemas', 1);
+INSERT INTO SUBJECT (name, idDiscipline) VALUES ('tempos verbais', 1);
+INSERT INTO SUBJECT (name, idDiscipline) VALUES ('regras gramaticas', 1);
+INSERT INTO SUBJECT (name, idDiscipline) VALUES ('uso da crase', 1);
+INSERT INTO SUBJECT (name, idDiscipline) VALUES ('verbos', 1);
+INSERT INTO SUBJECT (name, idDiscipline) VALUES ('substantivos', 1);
+INSERT INTO SUBJECT (name, idDiscipline) VALUES ('adjetivos', 1);
+INSERT INTO SUBJECT (name, idDiscipline) VALUES ('adverbios', 1);
+INSERT INTO SUBJECT (name, idDiscipline) VALUES ('artigos indefinidos', 1);
+INSERT INTO SUBJECT (name, idDiscipline) VALUES ('artigos definidos', 1);
+INSERT INTO SUBJECT (name, idDiscipline) VALUES ('conjunções', 1);
+INSERT INTO SUBJECT (name, idDiscipline) VALUES ('análise sintática', 1);
+INSERT INTO SUBJECT (name, idDiscipline) VALUES ('adverbios de tempo', 1);
+INSERT INTO SUBJECT (name, idDiscipline) VALUES ('plural', 1);
+
+INSERT INTO SUBJECT (name, idDiscipline) VALUES ('funções', 2);
+INSERT INTO SUBJECT (name, idDiscipline) VALUES ('sistema lineares', 2);
+INSERT INTO SUBJECT (name, idDiscipline) VALUES ('equação do 1º grau', 2);
+INSERT INTO SUBJECT (name, idDiscipline) VALUES ('equação do 2º grau', 2);
+INSERT INTO SUBJECT (name, idDiscipline) VALUES ('matrizes', 2);
+INSERT INTO SUBJECT (name, idDiscipline) VALUES ('determinantes', 2);
+INSERT INTO SUBJECT (name, idDiscipline) VALUES ('vetores', 2);
+INSERT INTO SUBJECT (name, idDiscipline) VALUES ('polinômios', 2);
+INSERT INTO SUBJECT (name, idDiscipline) VALUES ('análise combinatória', 2);
+INSERT INTO SUBJECT (name, idDiscipline) VALUES ('fatorial', 2);
+-- INSERIR ASSUNTO (NAME, ID_DISCIPLINE) --
+
+-- INSERIR PROVAS --
+INSERT INTO EXAM (idInstitution, year, role, level, organ)
+VALUES (1, 2014, 'SECRETÁRIO', 'MÉDIO', 'PREFEITURA MUNCIPAL DE CAMPINA GRANDE');
+INSERT INTO EXAM (idInstitution, year, role, level, organ)
+VALUES (4, 2011, 'CONTADOR', 'MÉDIO', 'PREFEITURA MUNCIPAL DE CAMPINA GRANDE');
+
+INSERT INTO EXAM (idInstitution, year, role, level, organ)
+VALUES (1, 2012, 'ADMINISTRADOR PÚBLICO', 'MÉDIO', 'PREFEITURA MUNCIPAL DE CAMPINA GRANDE');
+
+INSERT INTO EXAM (idInstitution, year, role, level, organ)
+VALUES (9, 2010, 'ARQUIVOLOGISTA', 'MÉDIO', 'PREFEITURA MUNCIPAL DE CAMPINA GRANDE');
+
+INSERT INTO EXAM (idInstitution, year, role, level, organ)
+VALUES (3, 2009, 'BIBLIOTECÁRIO', 'MÉDIO', 'PREFEITURA MUNCIPAL DE CAMPINA GRANDE');
+
+INSERT INTO EXAM (idInstitution, year, role, level, organ)
+VALUES (6, 2013, 'SERVIDOR MUNCIPAL', 'MÉDIO', 'PREFEITURA MUNCIPAL DE CAMPINA GRANDE');
+
+INSERT INTO EXAM (idInstitution, year, role, level, organ)
+VALUES (7, 2014, 'AGENTE ADMINISTRATIVO', 'MÉDIO', 'PREFEITURA MUNCIPAL DE CAMPINA GRANDE');
+
+INSERT INTO EXAM (idInstitution, year, role, level, organ)
+VALUES (5, 2014, 'MÉDICO DENTISTA', 'MÉDIO', 'PREFEITURA MUNCIPAL DE CAMPINA GRANDE');
+
+INSERT INTO EXAM (idInstitution, year, role, level, organ)
+VALUES (4, 2014, 'POLICIAL MILITAR', 'MÉDIO', 'PREFEITURA MUNCIPAL DE CAMPINA GRANDE');
+
+INSERT INTO EXAM (idInstitution, year, role, level, organ)
+VALUES (3, 2014, 'AGENTE GUARDA MUNCIPAL', 'MÉDIO', 'PREFEITURA MUNCIPAL DE CAMPINA GRANDE');
+
+INSERT INTO EXAM (idInstitution, year, role, level, organ)
+VALUES (1, 2014, 'AGENTE DE VIGILANCIA SANITÁRIA', 'MÉDIO', 'PREFEITURA MUNCIPAL DE CAMPINA GRANDE');
+
+INSERT INTO EXAM (idInstitution, year, role, level, organ)
+VALUES (1, 2000, 'AGENTE COMUNITÁRIO', 'MÉDIO', 'PREFEITURA MUNCIPAL DE CAMPINA GRANDE');
+
+INSERT INTO EXAM (idInstitution, year, role, level, organ)
+VALUES (1, 2011, 'ENCANADOR', 'MÉDIO', 'PREFEITURA MUNCIPAL DE CAMPINA GRANDE');
+
+INSERT INTO EXAM (idInstitution, year, role, level, organ)
+VALUES (1, 2013, 'MOTORISTA', 'MÉDIO', 'PREFEITURA MUNCIPAL DE CAMPINA GRANDE');
+
+INSERT INTO EXAM (idInstitution, year, role, level, organ)
+VALUES (1, 2011, 'ELETRICISTA', 'MÉDIO', 'PREFEITURA MUNCIPAL DE CAMPINA GRANDE');
+
+INSERT INTO EXAM (idInstitution, year, role, level, organ)
+VALUES (1, 2012, 'SERVIDOR MUNCIPAL', 'MÉDIO', 'PREFEITURA MUNCIPAL DE CAMPINA GRANDE');
+
+-- INSERIR PROVAS --
+
 

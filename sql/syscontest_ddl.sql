@@ -14,5 +14,23 @@ CREATE TABLE DISCIPLINE (
 	CONSTRAINT 	disciplinePCK PRIMARY KEY (idDiscipline)
 );
 
+CREATE TABLE SUBJECT (
+	idSubject 			INT 		NOT NULL AUTO_INCREMENT,
+	name				NVARCHAR(45),
+	idDiscipline		INT,
+	CONSTRAINT subjectPKC PRIMARY KEY (idSubject),
+	CONSTRAINT subjectFKT FOREIGN KEY (idDiscipline) REFERENCES DISCIPLINE(idDiscipline)
+);
+
+CREATE TABLE EXAM (
+	idExam				INT 		NOT NULL AUTO_INCREMENT,
+	idInstitution		INT, 
+	year				INT,
+	role				NVARCHAR(45),
+	level				NVARCHAR(20),
+	organ				NVARCHAR(55),
+	CONSTRAINT examPKC PRIMARY KEY (idExam),
+	CONSTRAINT examFKT FOREIGN KEY (idInstitution) REFERENCES INSTITUTION(idInstitution)
+);
 
 
