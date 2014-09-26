@@ -8,17 +8,17 @@ Ext.define ('SysContest.view.exam.ExamesGrid',{
 	 columns : [
 	 		{
 	 			text: 'ID Prova',
-	 			width : 50,
+	 			width : 100,
 	 			dataIndex : 'idExam'
 	 		},
 	 		{
 	 			text  : 'ID Instituição',
-	 			width : 50,
+	 			width : 100,
 	 			dataIndex : 'idInstitution'
 	 		},
 	 		{
 	 			text : 'Ano',
-	 			width : 30,
+	 			width : 50,
 	 			dataIndex : 'year'
 	 		},
 	 		{
@@ -29,12 +29,12 @@ Ext.define ('SysContest.view.exam.ExamesGrid',{
 	 		},
 	 		{
 	 			 text : 'Nível',
-	 			 width : 100,
+	 			 width : 160,
 	 			 dataIndex : 'level'
 	 		},
 	 		{
 	 			 text : 'Orgão',
-	 			 width : 200,
+	 			 width : 250,
 	 			 dataIndex : 'organ'
 	 		}
 	 ],

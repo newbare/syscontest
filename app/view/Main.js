@@ -5,7 +5,8 @@ Ext.define('SysContest.view.Main', {
         'Ext.layout.container.Border',
         'SysContest.view.institution.InstitutionsGrid',
         'SysContest.view.discipline.DisciplinesGrid',
-        'SysContest.view.subject.SubjectsGrid'
+        'SysContest.view.subject.SubjectsGrid',
+        'SysContest.view.exam.ExamesGrid'
     ],
     
     xtype: 'app-main',
@@ -49,7 +50,12 @@ Ext.define('SysContest.view.Main', {
             ]
         },
         {
-            title : 'PROVAS'
+            title : 'PROVAS',
+            items : [
+                {
+                    xtype : 'examesgrid'
+                }
+            ]
         },{
             title : 'SIMULADO'
         }]
