@@ -8,8 +8,6 @@ Ext.define('SysContest.model.Exam', {
 			{name : 'role', type : 'string'},
 			{name : 'level', type : 'string'},
 			{name : 'organ', type : 'string'}
-	],
-
-	belongsTo:{model:'SysContest.model.Discipline', foreignKey:'idDiscipline'}
+	]
 
 });
