@@ -10,7 +10,7 @@ Ext.define('SysContest.controller.Question', {
     ],
 
     views : [
-       'SysContest.view.question.QuestionsGrid',
+       'SysContest.view.question.QuestionsGrid'
        //'SysContest.view.discipline.DisciplinesForm'
     ],
 
@@ -21,6 +21,10 @@ Ext.define('SysContest.controller.Question', {
             //itemdblclick : this.onEditClick
           }
         });
+    },
+
+   onGridRender : function (grid, eOpts){
+      grid.getStore().load();
     }
 
 });

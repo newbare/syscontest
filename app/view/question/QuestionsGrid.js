@@ -13,7 +13,7 @@ Ext.define ('SysContest.view.question.QuestionsGrid',{
 	 		},
 	 		{
 	 			text  : 'ID Prova',
-	 			width : 100,
+	 			width : 80,
 	 			dataIndex : 'idExam'
 	 		},
 	 		{
@@ -23,7 +23,7 @@ Ext.define ('SysContest.view.question.QuestionsGrid',{
 	 			 dataIndex :'statement'
 	 		},
 	 		{
-	 			 texto : 'Resposta',
+	 			 text : 'Resposta',
 	 			 width : 100,
 	 			 dataIndex : 'answer'
 	 		}

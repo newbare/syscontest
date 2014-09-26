@@ -2,8 +2,8 @@
 
  include('../connect.php');
  
-  $start = $_REQUEST['start'];
-  $limit = $_REQUEST['limit'];
+ $start = $_REQUEST['start'];
+ $limit = $_REQUEST['limit'];
 
 	$queryString = "SELECT * FROM question LIMIT $start,  $limit";
 
