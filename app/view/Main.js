@@ -57,6 +57,9 @@ Ext.define('SysContest.view.Main', {
                 }
             ]
         },{
+            title : 'QUESTÕES'
+        },
+        {
             title : 'SIMULADO'
         }]
     }]
