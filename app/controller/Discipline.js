@@ -18,7 +18,7 @@ Ext.define('SysContest.controller.Discipline', {
         this.control({
           'disciplinesgrid' : {
              render : this.onGridRender,
-            itemdblclick : this.onEditClick
+             itemdblclick : this.onEditClick
           },
            'disciplinesgrid button#addDiscipline' : {
              click : this.onAddClick
