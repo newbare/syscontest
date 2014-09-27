@@ -7,19 +7,35 @@
 	//$data = json_decode(stripslashes($info));
 	$data = json_decode($info);
 
-	$name = $data->name;
-	$id = $data->idDiscipline;
+	$idQuestion = $data->idQuestion;
+	$idExam = $data->idExam;
+	$statement = $data->statement;
+	$answer = $data->answer;
+	$optionA = $data->optionA;
+	$optionB = $data->optionB;
+	$optionC = $data->optionC;
+	$optionD = $data->optionD;
+ $optionC = $data->optionE;
 
 	//sql  query
-	$query = sprintf("UPDATE discipline SET name = '%s' WHERE idDiscipline=%d",
+	$query = sprintf("UPDATE question SET idExam = '%d', statement = '%s'
+	, answer = '%s' , optionA = '%s' , optionB = '%s', optionC = '%s'
+	, optionD = '%s', optionE = '%s' WHERE idQuestion=%d",
 		mysql_real_escape_string($name),
-		mysql_real_escape_string($id));
+		mysql_real_escape_string($idQuestion));
 
 	$rs = mysql_query($query);
 
 	echo json_encode(array(
 		"success" => mysql_errno() == 0,
 		"data" => array(
-			"idDiscipline" => $id,
-			"name" => $name)
+			"idQuestion" => $id,
+				"idExam" => $idExam,
+			"statement" => $statement,
+			"answer" => $answer,
+			"optionA" => $optionA,
+			"optionB" => $optionB,
+			"optionC" => $optionC,
+			"optionD" => $optionD,
+			"optionE" => $optionE
 	  ));
