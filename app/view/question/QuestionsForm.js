@@ -103,13 +103,13 @@ Ext.define('SysContest.view.question.QuestionsForm',{
 			   {
 					 xtype : 'button',
 					 text : 'Cancelar',
-					 itemId : 'cancelDiscipline',
+					 itemId : 'cancelQuestion',
 					 iconCls : 'icon-del'
 			  	},
 				 {
 					xtype : 'button',
 					text : 'Salvar',
-					itemId : 'saveDiscipline',
+					itemId : 'saveQuestion',
 					iconCls : 'icon-save'
 				}]
 		}]

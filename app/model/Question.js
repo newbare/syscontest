@@ -12,5 +12,4 @@ Ext.define('SysContest.model.Question', {
 			{name : 'optionD', type : 'string'},
 			{name : 'optionE', type : 'string'}
 	]
-
 });

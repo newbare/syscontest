@@ -25,6 +25,9 @@ Ext.define('SysContest.controller.Question', {
           },
           'questionsgrid button#deleteQuestion' : {
             click : this.onDeleteClick
+          },
+          'questionsform button#cancelQuestion' : {
+            click : this.onCancelClick
           }
         });
     },
@@ -60,6 +63,13 @@ Ext.define('SysContest.controller.Question', {
            Ext.MessageBox.alert('Mensagem','Registro deletado!');
         } 
       });
+    },
+
+    onCancelClick : function (btn, e, eOpts){
+      var win = btn.up('window');
+      var form = win.down('form');
+      form.getForm().reset();
+      win.close();
     }
 
 });
