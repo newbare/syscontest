@@ -26,8 +26,11 @@ Ext.define('SysContest.controller.Exam', {
           },
           'examesgrid button#deleteExam' : {
             click : this.onDeleteClick
+          },
+          'examesform button#cancelExam' : {
+            click : this.onCancelClick
           }
-          
+
         });
 
     },
@@ -63,6 +66,13 @@ Ext.define('SysContest.controller.Exam', {
            Ext.MessageBox.alert('Mensagem','Prova deletada!');
         } 
       });
+    },
+
+    onCancelClick : function (btn, e, eOpts){
+      var win = btn.up('window');
+      var form = win.down('form');
+      form.getForm().reset();
+      win.close();
     }
 
 });
