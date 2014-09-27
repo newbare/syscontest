@@ -19,13 +19,19 @@ Ext.define('SysContest.controller.Question', {
           'questionsgrid' : {
              render : this.onGridRender,
              itemdblclick : this.onEditClick
+          },
+          'questionsgrid button#addQuestion' : {
+             click : this.onAddClick
+          },
+          'questionsgrid button#deleteQuestion' : {
+            click : this.onDeleteClick
           }
         });
     },
 
    onGridRender : function (grid, eOpts){
       grid.getStore().load();
-    },
+   },
 
    openForm : function (title) {
        var win = Ext.create('SysContest.view.question.QuestionsForm');
@@ -41,6 +47,19 @@ Ext.define('SysContest.controller.Question', {
       var win = this.openForm('Editar Questão - ' + record.get('idQuestion'));
       var form = win.down('form');
       form.loadRecord(record);
-   }
+   },
+
+   onDeleteClick : function (btn, e, eOpts){
+      Ext.MessageBox.confirm('Atenção','Deseja remover essa Disciplina?', function(btnConfirm){
+        if (btnConfirm == 'yes'){
+           var grid = btn.up('grid'),
+               records = grid.getSelectionModel().getSelection(),
+               store = grid.getStore();
+           store.remove(records);
+           store.sync(); 
+           Ext.MessageBox.alert('Mensagem','Registro deletado!');
+        } 
+      });
+    }
 
 });

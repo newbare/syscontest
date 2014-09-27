@@ -7,17 +7,41 @@
 	//$data = json_decode(stripslashes($info));
 	$data = json_decode($info);
 
-	$name = $data->name;
+	$idExam = $data->idExam;
+	$statement = $data->statement;
+	$answer = $data->answer;
+	$optionA = $data->optionA;
+	$optionB = $data->optionB;
+	$optionC = $data->optionC;
+	$optionD = $data->optionD;
+ $optionC = $data->optionE;
 	
 	//sql query
-	$query = sprintf("INSERT INTO discipline (name) values ('%s')",
-		mysql_real_escape_string($name));
+	$query = sprintf("INSERT INTO question (idExam, statement, answer, optionA, optionB, optionC, optionD, optionE)
+	 values ('%d','%s','%s','%s','%s','%s','%s','%s' )",
+		mysql_real_escape_string($name),
+		mysql_real_escape_string($idExam),
+		mysql_real_escape_string($statement),
+		mysql_real_escape_string($answer),
+		mysql_real_escape_string($optionA),
+		mysql_real_escape_string($optionB),
+		mysql_real_escape_string($optionC),
+		mysql_real_escape_string($optionD),
+		mysql_real_escape_string($optionE));
 
 	$rs = mysql_query($query);
 
 	echo json_encode(array(
 		"success" => mysql_errno() == 0,
 		"data" => array(
-			"idDiscipline" => mysql_insert_id(),
-			"name" => $name)
+			"idQuestion" => mysql_insert_id(),
+			"idExam" => $idExam,
+			"statement" => $statement,
+			"answer" => $answer,
+			"optionA" => $optionA,
+			"optionB" => $optionB,
+			"optionC" => $optionC,
+			"optionD" => $optionD,
+			"optionE" => $optionE,
+			)
 	));
