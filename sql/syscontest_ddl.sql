@@ -38,6 +38,20 @@ CREATE TABLE QUESTION (
 	idExam 				INT,
 	statement 			NVARCHAR(8500),
 	answer 				CHAR,
+	optionA				NVARCHAR(2000),
+	optionB				NVARCHAR(2000),
+	optionC				NVARCHAR(2000),
+	optionD				NVARCHAR(2000),
+	optionE				NVARCHAR(2000),
 	CONSTRAINT questionPKC PRIMARY KEY (idQuestion),
 	CONSTRAINT questionFKT FOREIGN KEY (idExam) REFERENCES EXAM (idExam)
 );
+
+-- CREATE TABLE ALTERNATIVE (
+-- 	idAlternative		INT 		NOT NULL AUTO_INCREMENT,
+-- 	 idQuestion			INT,
+--  	optionText			NVARCHAR(3000),
+-- 	letter 				CHAR,
+-- 	CONSTRAINT alternativePKC PRIMARY KEY (idAlternative),
+-- 	CONSTRAINT alternativeFKT FOREIGN KEY (idQuestion) REFERENCES QUESTION(idQuestion)
+-- );
