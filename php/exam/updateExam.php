@@ -16,7 +16,7 @@
 
 
 	//sql  query
-	$query = sprintf("UPDATE discipline SET idInstitution = '%d',
+	$query = sprintf("UPDATE exam SET idInstitution = '%d',
 	year = '%d', role = '%s' , level = '%s' , organ = '%s'  WHERE idExam=%d",
 		mysql_real_escape_string($idInstitution),
 		mysql_real_escape_string($year),
