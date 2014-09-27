@@ -28,7 +28,10 @@ Ext.define('SysContest.controller.Question', {
           },
           'questionsform button#cancelQuestion' : {
             click : this.onCancelClick
-          }
+          },
+          'questionsform button#saveQuestion' : {
+              click : this.onSaveClick
+           }
         });
     },
 
@@ -65,11 +68,38 @@ Ext.define('SysContest.controller.Question', {
       });
     },
 
-    onCancelClick : function (btn, e, eOpts){
-      var win = btn.up('window');
-      var form = win.down('form');
-      form.getForm().reset();
-      win.close();
-    }
+  onCancelClick : function (btn, e, eOpts){
+    var win = btn.up('window');
+    var form = win.down('form');
+    form.getForm().reset();
+    win.close();
+  },
+
+  onSaveClick : function (btn, e, eOpts){
+    var win = btn.up('window'),
+        form = win.down('form'),
+        values = form.getValues(),
+        record = form.getRecord(),
+        grid = Ext.ComponentQuery.query('questionsgrid')[0],
+        store = grid.getStore();
+
+        if (record){
+          record.set(values);
+        }else{
+          var question = Ext.create('SysContest.model.Question',{
+            idExam : values.idExam,
+            statement : values.statement,
+            answer : values.answer,
+            optionA : values.optionA,
+            optionB : values.optionB,
+            optionC : values.optionC,
+            optionD : values.optionD,
+            optionE : values.optionE
+          });
+          store.insert(0,question);
+        }
+        store.sync();
+        win.close();
+  }
 
 });

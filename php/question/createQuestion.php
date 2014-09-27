@@ -14,12 +14,11 @@
 	$optionB = $data->optionB;
 	$optionC = $data->optionC;
 	$optionD = $data->optionD;
- $optionC = $data->optionE;
+ $optionE = $data->optionE;
 	
 	//sql query
 	$query = sprintf("INSERT INTO question (idExam, statement, answer, optionA, optionB, optionC, optionD, optionE)
 	 values ('%d','%s','%s','%s','%s','%s','%s','%s' )",
-		mysql_real_escape_string($name),
 		mysql_real_escape_string($idExam),
 		mysql_real_escape_string($statement),
 		mysql_real_escape_string($answer),
@@ -42,6 +41,5 @@
 			"optionB" => $optionB,
 			"optionC" => $optionC,
 			"optionD" => $optionD,
-			"optionE" => $optionE,
-			)
+			"optionE" => $optionE)
 	));

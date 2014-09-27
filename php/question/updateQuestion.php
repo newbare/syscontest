@@ -15,13 +15,20 @@
 	$optionB = $data->optionB;
 	$optionC = $data->optionC;
 	$optionD = $data->optionD;
- $optionC = $data->optionE;
+ $optionE = $data->optionE;
 
 	//sql  query
 	$query = sprintf("UPDATE question SET idExam = '%d', statement = '%s'
 	, answer = '%s' , optionA = '%s' , optionB = '%s', optionC = '%s'
 	, optionD = '%s', optionE = '%s' WHERE idQuestion=%d",
-		mysql_real_escape_string($name),
+		mysql_real_escape_string($idExam),
+		mysql_real_escape_string($statement),
+		mysql_real_escape_string($answer),
+		mysql_real_escape_string($optionA),
+		mysql_real_escape_string($optionB),
+		mysql_real_escape_string($optionC),
+		mysql_real_escape_string($optionD),
+		mysql_real_escape_string($optionE),
 		mysql_real_escape_string($idQuestion));
 
 	$rs = mysql_query($query);
@@ -29,7 +36,7 @@
 	echo json_encode(array(
 		"success" => mysql_errno() == 0,
 		"data" => array(
-			"idQuestion" => $id,
+			"idQuestion" => $idQuestion,
 				"idExam" => $idExam,
 			"statement" => $statement,
 			"answer" => $answer,
@@ -38,4 +45,4 @@
 			"optionC" => $optionC,
 			"optionD" => $optionD,
 			"optionE" => $optionE
-	  ));
+	  )));
