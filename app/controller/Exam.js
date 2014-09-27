@@ -29,7 +29,10 @@ Ext.define('SysContest.controller.Exam', {
           },
           'examesform button#cancelExam' : {
             click : this.onCancelClick
-          }
+          },
+          'examesform button#saveExam' : {
+              click : this.onSaveClick
+           }
 
         });
 
@@ -73,6 +76,30 @@ Ext.define('SysContest.controller.Exam', {
       var form = win.down('form');
       form.getForm().reset();
       win.close();
+    },
+
+    onSaveClick : function (btn, e, eOpts){
+      var win = btn.up('window'),
+          form = win.down('form'),
+          values = form.getValues(),
+          record = form.getRecord(),
+          grid = Ext.ComponentQuery.query('examesgrid')[0],
+          store = grid.getStore();
+
+          if (record){
+            record.set(values);
+          }else{
+            var exam = Ext.create('SysContest.model.Exam',{
+              idInstitution : values.idInstitution,
+              year : values.year,
+              role : values.role,
+              level : values.level,
+              organ : values.organ
+            });
+            store.insert(0,exam);
+          }
+          store.sync();
+          win.close();
     }
 
 });

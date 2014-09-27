@@ -7,17 +7,33 @@
 	//$data = json_decode(stripslashes($info));
 	$data = json_decode($info);
 
-	$name = $data->name;
-	
+// (idInstitution, year, role, level, organ)
+	$idInstitution = $data->idInstitution;
+	$year = $data->year;
+	$role = $data->role;
+	$level = $data->level;
+	$organ = $data->organ;
+
 	//sql query
-	$query = sprintf("INSERT INTO discipline (name) values ('%s')",
-		mysql_real_escape_string($name));
+	$query = sprintf("INSERT INTO exam (idInstitution, year, role, level, organ)
+	 values ('%d','%d','%s','%s','%s' )",
+		mysql_real_escape_string($idInstitution),
+  mysql_real_escape_string($year),
+  mysql_real_escape_string($role),
+  mysql_real_escape_string($level),
+  mysql_real_escape_string($organ)
+		);
 
 	$rs = mysql_query($query);
 
 	echo json_encode(array(
 		"success" => mysql_errno() == 0,
 		"data" => array(
-			"idDiscipline" => mysql_insert_id(),
-			"name" => $name)
+			"idExam" => mysql_insert_id(),
+			"idInstitution" => $idInstitution,
+			"year" => $year,
+			"role" => $role,
+			"level" => $level,
+			"organ" => $organ
+			)
 	));
