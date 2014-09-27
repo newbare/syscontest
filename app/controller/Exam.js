@@ -23,6 +23,9 @@ Ext.define('SysContest.controller.Exam', {
           },
           'examesgrid button#addExam' : {
              click : this.onAddClick
+          },
+          'examesgrid button#deleteExam' : {
+            click : this.onDeleteClick
           }
           
         });
@@ -47,6 +50,19 @@ Ext.define('SysContest.controller.Exam', {
         var win = this.openForm('Editar Prova - ' + record.get('idExam'));
         var form = win.down('form');
         form.loadRecord(record);
+    },
+
+    onDeleteClick : function (btn, e, eOpts){
+      Ext.MessageBox.confirm('Atenção','Deseja remover essa Prova?', function(btnConfirm){
+        if (btnConfirm == 'yes'){
+           var grid = btn.up('grid'),
+               records = grid.getSelectionModel().getSelection(),
+               store = grid.getStore();
+           store.remove(records);
+           store.sync(); 
+           Ext.MessageBox.alert('Mensagem','Prova deletada!');
+        } 
+      });
     }
 
 });

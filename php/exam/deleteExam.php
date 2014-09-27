@@ -7,11 +7,11 @@
 	//$data = json_decode(stripslashes($info));
 	$data = json_decode($info);
 
-	$id = $data->idDiscipline;
+	$idExam = $data->idExam;
 
 	//consulta sql
-	$query = sprintf("DELETE FROM discipline WHERE idDiscipline=%d",
-		mysql_real_escape_string($id));
+	$query = sprintf("DELETE FROM exam WHERE idExam=%d",
+		mysql_real_escape_string($idExam));
 
 	$rs = mysql_query($query);
 

@@ -29,7 +29,7 @@ Ext.define('SysContest.controller.Discipline', {
           'disciplinesform button#cancelDiscipline' : {
             click : this.onCancelClick
           },
-           'disciplinesform button#saveDiscipline' : {
+          'disciplinesform button#saveDiscipline' : {
               click : this.onSaveClick
            }
 
