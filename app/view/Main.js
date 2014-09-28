@@ -8,7 +8,8 @@ Ext.define('SysContest.view.Main', {
         'SysContest.view.subject.SubjectsGrid',
         'SysContest.view.exam.ExamesGrid',
         'SysContest.view.question.QuestionsGrid',
-        'SysContest.view.simulated.SimulatedPanel'
+        'SysContest.view.simulated.SimulatedPanel',
+        'SysContest.view.simulated.SidePanel'
     ],
     
     xtype: 'app-main',
@@ -21,7 +22,13 @@ Ext.define('SysContest.view.Main', {
         region: 'west',
         xtype: 'panel',
         title: 'SYS CONTEST',
-        width: 150
+        width: 150,
+        layout : 'fit',
+        items : [
+            {
+                xtype : 'sidepanel'
+            }
+        ]
     },{
         region: 'center',
         xtype: 'tabpanel',

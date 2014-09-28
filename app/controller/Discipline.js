@@ -40,7 +40,7 @@ Ext.define('SysContest.controller.Discipline', {
       grid.getStore().load();
     },
 
-     openForm : function (title) {
+    openForm : function (title) {
        var win = Ext.create('SysContest.view.discipline.DisciplinesForm');
        win.setTitle(title);
        return win;

@@ -7,7 +7,8 @@ Ext.define('SysContest.Application', {
             'Ext.toolbar.Paging',
             'Ext.form.Panel',
             'Ext.form.field.Hidden',
-            'Ext.form.field.ComboBox'
+            'Ext.form.field.ComboBox',
+            'Ext.layout.container.Accordion'
     ],
 
     views: [

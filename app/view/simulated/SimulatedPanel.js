@@ -1,7 +1,7 @@
 Ext.define('SysContest.view.simulated.SimulatedPanel',{
 		extend : 'Ext.panel.Panel',
 		alias  : 'widget.simulatedpanel',
-		title : 'SIMULADO COM QUESTÕES DE PROVAS DE CONCURSO PÚBLICO',
+		title : 'QUESTÕES DE CONCURSO PÚBLICO',
 		height: 400,
  	layout : {
 					type : 'vbox',

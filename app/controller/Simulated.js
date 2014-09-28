@@ -10,8 +10,8 @@ Ext.define('SysContest.controller.Simulated', {
     ],
 
     views : [
-       //'SysContest.view.simulated.SimulatedPanel',
-       'SysContest.view.simulated.SimulatedWindow'
+       'SysContest.view.simulated.SimulatedWindow',
+       'SysContest.view.simulated.SidePanel'
     ],
 
     init : function (application) {
@@ -68,6 +68,16 @@ Ext.define('SysContest.controller.Simulated', {
   onCancelClick : function (btn, e, eOpts){
     var win = btn.up('window');
     win.close();
+  },
+
+  openForm : function (title) {
+    var win = Ext.create('SysContest.view.discipline.DisciplinesForm');
+    win.setTitle(title);
+    return win;
+  },
+
+  onAddClick : function (btn , e, eOpts){
+    this.openForm('Novo Simulado');
   },
 
   onCkechAnswers : function(btn , e, eOpts){

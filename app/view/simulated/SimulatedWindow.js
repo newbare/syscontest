@@ -1,9 +1,8 @@
 Ext.define('SysContest.view.simulated.SimulatedWindow',{
 		extend : 'Ext.window.Window',
 		alias  : 'widget.simulatedwindow',
-
 		heigth : 100,
-		width  : 500,
+		width  : 600,
 		modal  : true,
 		layout : 'fit',
 	 iconCls : 'icon-simulated',
