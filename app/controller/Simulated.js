@@ -42,7 +42,8 @@ Ext.define('SysContest.controller.Simulated', {
       var tpl = Ext.create('Ext.XTemplate',
         '<div id="myForm">',
         '<tpl for=".">',
-        '<p><strong>{data.statement} </strong></p>',
+        '<div id="Q{[xindex]}">',
+        '<h4><strong>{data.statement} </strong></h4>',
         '<p><input type="radio" name="{[xindex]}" value="A"> {data.optionA} </p>',
         '<p><input type="radio" name="{[xindex]}" value="B"> {data.optionB} </p>',
         '<p><input type="radio" name="{[xindex]}" value="C"> {data.optionC} </p>',
@@ -51,6 +52,7 @@ Ext.define('SysContest.controller.Simulated', {
                     '<p><input type="radio" name="{[xindex]}"  value="E" /> {data.optionE} </p>',
               '</tpl>',
         '<p id="R{[xindex]}">{data.answer}</p>',
+        '</div>',
         '</tpl>',
         '</div>'
       );
@@ -59,11 +61,8 @@ Ext.define('SysContest.controller.Simulated', {
          
       for (var i=1; i<=10; i++){
          $('#R'+i).hide();
-         //this.answers.push(Ext.get("R"+i).getHTML());   
+         Ext.get("Q"+i).addCls(['alert-message', 'alert-message-info']);
       }
-
-     // this.answers = this.getSimulatedAnswers();
-
     });
     
   },
@@ -124,13 +123,8 @@ Ext.define('SysContest.controller.Simulated', {
         answers = this.getSimulatedAnswers(),
         score = 0;
 
-    console.log('user     : ' + userAnswers);
-    console.log('gabarito : ' + answers);
-
     if (this.validate(userAnswers)){
-      
       score = this.computeScore(answers, userAnswers);
-
       Ext.Msg.alert('Correção', 'Sua nota é ' + score + '!');  
     }
     else {
