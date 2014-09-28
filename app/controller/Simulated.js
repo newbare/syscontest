@@ -19,8 +19,8 @@ Ext.define('SysContest.controller.Simulated', {
           'simulatedwindow' : {
              render : this.onCreateSimulated,
           },
-          'simulatedwindow button#cancelSimulated' : {
-            click : this. onCancelClick,
+          'sidepanel button#createSimulated' : {
+            click : this. onAddClick,
           } 
         });
     },
@@ -71,7 +71,7 @@ Ext.define('SysContest.controller.Simulated', {
   },
 
   openForm : function (title) {
-    var win = Ext.create('SysContest.view.discipline.DisciplinesForm');
+    var win = Ext.create('SysContest.view.simulated.SimulatedWindow');
     win.setTitle(title);
     return win;
   },

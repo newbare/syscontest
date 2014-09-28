@@ -19,6 +19,7 @@ Ext.define('SysContest.view.simulated.SidePanel',{
 					{
         title: 'Simulados',
         html : 'Para iniciar um novo simulado clique no botão <strong>Novo</strong>.',
+        bodyStyle: 'padding:2px',
         dockedItems : [
    			   {
 									 xtype : 'toolbar',
