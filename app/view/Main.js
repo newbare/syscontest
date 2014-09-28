@@ -62,17 +62,10 @@ Ext.define('SysContest.view.Main', {
             title : 'QUESTÕES',
             items : [
                 {
-                    xtype : 'questionsgrid'
+                    xtype : 'questionsgrid',
                 }
             ]
-        },
-        {
-            title : 'SIMULADO',
-            items : [
-                {
-                    xtype : 'simulatedpanel'
-                }
-            ]
-        }]
+        }
+       ]
     }]
 });

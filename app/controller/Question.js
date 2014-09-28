@@ -30,7 +30,7 @@ Ext.define('SysContest.controller.Question', {
             click : this.onCancelClick
           },
           'questionsform button#saveQuestion' : {
-              click : this.onSaveClick
+            click : this.onSaveClick
            }
         });
     },
