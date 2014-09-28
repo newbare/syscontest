@@ -85,10 +85,10 @@ Ext.define('SysContest.controller.Simulated', {
 
   validate : function ( answers ){
     for (var i=0; i < answers.length ; i++){
-     if(answers[i] === 'undefined' || answers[i] === ''){
+     if(answers[i] === undefined || answers[i] === '' || answers[i] === null){
        return false;
      }
-   }
+    }
     return true;
   },
 
