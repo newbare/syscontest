@@ -96,9 +96,21 @@ Ext.define('SysContest.controller.Simulated', {
    for (var i = 0; i < answers.length; i++){
      if (answers[i] === uAnswers[i]){
        score++;
+       this.markLayoutAcept(i+1);
+     }
+     else {
+       this.markLayoutReject(i+1);
      }
    }
    return score;
+  },
+
+  markLayoutAcept : function (index){
+    Ext.get("Q"+index).addCls(['alert-message', 'alert-message-success']);
+  },
+
+  markLayoutReject : function (index){
+    Ext.get("Q"+index).addCls(['alert-message', 'alert-message-error']);
   },
 
   getUserAnswers : function (){
@@ -125,7 +137,10 @@ Ext.define('SysContest.controller.Simulated', {
 
     if (this.validate(userAnswers)){
       score = this.computeScore(answers, userAnswers);
-      Ext.Msg.alert('Correção', 'Sua nota é ' + score + '!');  
+      Ext.Msg.alert('Correção', 'Sua nota é ' + score + '!');
+      //window.location.reload();  
+      //var win = btn.up('window');
+
     }
     else {
      Ext.Msg.show({
