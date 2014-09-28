@@ -2,7 +2,7 @@ Ext.define('SysContest.view.simulated.SimulatedWindow',{
 		extend : 'Ext.window.Window',
 		alias  : 'widget.simulatedwindow',
 		heigth : 100,
-		width  : 600,
+		width  : 700,
 		modal  : true,
 		layout : 'fit',
 	 iconCls : 'icon-simulated',
@@ -39,7 +39,7 @@ Ext.define('SysContest.view.simulated.SimulatedWindow',{
 					 itemId : 'cancelSimulated',
 					 iconCls : 'icon-remove'
 			  	},
-				 {
+				 { 
 					xtype : 'button',
 					text : 'Corrigir',
 					itemId : 'checkSimulated',

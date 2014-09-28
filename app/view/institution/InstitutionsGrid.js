@@ -4,7 +4,6 @@ Ext.define ('SysContest.view.institution.InstitutionsGrid',{
 	 store : 'SysContest.store.Institutions',
 	 title : 'Instituições Cadastradas',
 	 iconCls : 'icon-company',
-
 	 columns : [
 	 		{
 	 			text: 'ID',

@@ -32,7 +32,7 @@ Ext.define('SysContest.view.Main', {
     },{
         region: 'center',
         xtype: 'tabpanel',
-
+        layout : 'fit',
         items:[{
             title: 'INSTITUIÇÕES',
             //bodyPadding: 10,
