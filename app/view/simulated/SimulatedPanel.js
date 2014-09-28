@@ -4,7 +4,7 @@ Ext.define('SysContest.view.simulated.SimulatedPanel',{
 		heigth : '100%',
 		modal  : true,
 		layout : 'fit',
-	 iconCls : 'icon-company',
+	 iconCls : 'icon-simulated',
 	 title : 'Simulado',
 		autoShow : true,
 

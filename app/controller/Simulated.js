@@ -6,7 +6,7 @@ Ext.define('SysContest.controller.Simulated', {
     ],
 
     stores : [
-      // 'SysContest.store.Disciplines'
+      'SysContest.store.Simulateds'
     ],
 
     views : [
