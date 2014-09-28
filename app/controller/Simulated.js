@@ -19,8 +19,8 @@ Ext.define('SysContest.controller.Simulated', {
           'simulatedwindow' : {
              render : this.onCreateSimulated,
           },
-          'simulatedwindow button#checkSimulated' : {
-            //click : this. onCkechAnswers,
+          'simulatedwindow button#cancelSimulated' : {
+            click : this. onCancelClick,
           } 
         });
     },
@@ -63,6 +63,11 @@ Ext.define('SysContest.controller.Simulated', {
 
     });
 
+  },
+
+  onCancelClick : function (btn, e, eOpts){
+    var win = btn.up('window');
+    win.close();
   },
 
   onCkechAnswers : function(btn , e, eOpts){
@@ -125,5 +130,7 @@ Ext.define('SysContest.controller.Simulated', {
 
     Ext.Msg.alert('Correção', 'Sua nota é ' + score + '!');
   }
+
+
 
 });
