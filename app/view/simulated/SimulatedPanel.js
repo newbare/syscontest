@@ -5,9 +5,9 @@ Ext.define('SysContest.view.simulated.SimulatedPanel',{
 		modal  : true,
 		layout : 'fit',
 	 iconCls : 'icon-simulated',
-	 title : 'Simulado',
+	 title : 'SIMULADO COM QUESTÕES DE PROVAS DE CONCURSO PÚBLICO',
 		autoShow : true,
-
+		html : '',
 	 dockedItems : [
 		{
 				xtype : 'toolbar',
@@ -21,13 +21,13 @@ Ext.define('SysContest.view.simulated.SimulatedPanel',{
 			   {
 					 xtype : 'button',
 					 text : 'Cancelar',
-					 itemId : 'cancelSimulado',
+					 itemId : 'cancelSimulated',
 					 iconCls : 'icon-del'
 			  	},
 				 {
 					xtype : 'button',
 					text : 'Corrigir',
-					itemId : 'checkSimulado',
+					itemId : 'checkSimulated',
 					iconCls : 'icon-save'
 						}]
 		 }]	
