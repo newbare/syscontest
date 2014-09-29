@@ -47,11 +47,10 @@ CREATE TABLE QUESTION (
 	CONSTRAINT questionFKT FOREIGN KEY (idExam) REFERENCES EXAM (idExam)
 );
 
--- CREATE TABLE ALTERNATIVE (
--- 	idAlternative		INT 		NOT NULL AUTO_INCREMENT,
--- 	 idQuestion			INT,
---  	optionText			NVARCHAR(3000),
--- 	letter 				CHAR,
--- 	CONSTRAINT alternativePKC PRIMARY KEY (idAlternative),
--- 	CONSTRAINT alternativeFKT FOREIGN KEY (idQuestion) REFERENCES QUESTION(idQuestion)
--- );
+CREATE TABLE DISCIPLINE_QUESTION (
+	idDiscipline 		INT 	NOT NULL,
+	idQuestion			INT 	NOT NULL,
+	CONSTRAINT disciplineQuestionPKC PRIMARY KEY (idDiscipline, idQuestion),
+	CONSTRAINT disciplineQuestionFKT FOREIGN KEY (idDiscipline) REFERENCES DISCIPLINE (idDiscipline),
+	CONSTRAINT disciplineQuestionFKT2 FOREIGN KEY (idQuestion) REFERENCES QUESTION (idQuestion) 
+);

@@ -116,30 +116,141 @@ INSERT INTO EXAM (idInstitution, year, role, level, organ)
 VALUES (1, 2012, 'SERVIDOR MUNCIPAL', 'MÉDIO', 'PREFEITURA MUNCIPAL DE CAMPINA GRANDE');
 -- INSERIR PROVAS --
 
+
 -- INSERT QUESTION  --
+-- Q1
 INSERT INTO QUESTION (idExam, statement, answer, optionA, optionB, optionC, optionD, optionE)
-VALUES (1, 'Não é correto afirmar sobre as ideias do texto:', 'D', 'A', 'B', 'C', 'D', 'E');
+VALUES (1, 'Indique a alternativa em que o termo em destaque foi utilizado incorretamente:', 
+'D',
+ 'É necessário bom [senso] e educação.',
+ 'Era muito [discreta] em relação a sua fortuna',
+ 'Na [iminência] da colisão, conseguiu brecar',
+ 'A participação nos lucros não [sortiu] efeito',
+ '');
+-- Q2
+INSERT INTO QUESTION (idExam, statement, answer, optionA, optionB, optionC, optionD, optionE)
+VALUES (1, 'Assinale a alternativa que não obedece às regras de concordância verbal:',
+  'C',
+ 'Dentre os visitantes da feira, José é um dos que mais participam.', 
+ 'Após as chuvas, só me resta um fogão, uma cadeira.', 
+ 'Acredito que devem haver convites sendo vendidos pelos cambistas.', 
+ 'Não sei ao certo se faz uma ou duas semanas que eu o encontrei.', 
+ '');
 
+-- Q3
 INSERT INTO QUESTION (idExam, statement, answer, optionA, optionB, optionC, optionD, optionE)
-VALUES (1, 'Em: \'A mãe, muito contente, apesar do filho detestar a
- escola e ir mal nas letras.\' Marque a opção cuja reescrita da
- frase não prejudica o sentido:', 'E', 'A', 'B', 'C', 'D', 'E');
+VALUES (1, 'Assinale a alternativa em que o verbo é intransitivo:',
+ 'A', 
+'Vovó morreu feliz.',
+'Os empregados encontram-se cansados.', 
+'Ocorreu um fato surpreendente.',
+ 'Conhecimento é tudo.',
+'');
+ 
+-- Q4
+INSERT INTO QUESTION (idExam, statement, answer, optionA, optionB, optionC, optionD, optionE)
+VALUES (1, 'Indique a alternativa em que há uma oração sem sujeito',
+ 'C', 
+'Alguém encontrará minha agenda.',
+'Faltou-me paciência para esperar o resultado', 
+'Há de haver uma saída!',
+'Compraram aquele apartamento.', '');
 
+-- Q5
 INSERT INTO QUESTION (idExam, statement, answer, optionA, optionB, optionC, optionD, optionE)
-VALUES (1, 'No período: \'E o homem do machado descobriu que podia ganhar a vida 
-com seu instrumento.\' A oração destacada pode ser classificada como:',
- 'C', 'A', 'B', 'C', 'D', 'E');
+VALUES (1, 'Não sei [se ele viajou]. A oração destacada se classifica como:', 
+'C', 
+' Subordinada substantiva subjetiva.', 
+'Subordinada substantiva completiva nominal.',
+ 'Subordinada substantiva objetiva direta.', 
+'Subordinada adverbial.', '');
 
-INSERT INTO QUESTION (idExam, statement, answer, optionA, optionB, optionC, optionD, optionE)
-VALUES (1, 'Em qual das situações do texto, a vírgula foi usada para indicar uma elipse?',
- 'B', 'A', 'B', 'C', 'D', 'E');
 
+-- Q6
 INSERT INTO QUESTION (idExam, statement, answer, optionA, optionB, optionC, optionD, optionE)
-VALUES (1, 'Assinale a opção em que há desvio da Gramatica Normativa:', 
-'B', 'A', 'B', 'C', 'D', 'E');
+VALUES (1, 'A separação silábica de todas as palavras está correta em:', 
+'B', 
+'An-droi-de / in-tu-i-to / su-b-jul-gar.',
+ 'A-e-ros-sol / his-té-ri-co / ho-mos-se-xu-al',
+ 'Ava-ro / in-te-lec-ção / tec-no-lo-gia.', 
+'Cáp-su-la / Al-co-ol / bió-ti-po.',
+ '');
 
+-- Q7
 INSERT INTO QUESTION (idExam, statement, answer, optionA, optionB, optionC, optionD, optionE)
-VALUES (1, 'Observe as afirmativas:', 'B', 'A', 'B', 'C', 'D', 'E');
+VALUES (1, 'Indique a alternativa que completa correta e respectivamente as lacunas abaixo:
+Precisaremos _______ um novo laboratório para que pesquisas não sejam _____.', 
+'D',
+'Improvizar – extintas.', 
+'Improvisar – estintas.', 
+'Improvizar – estintas.',
+'Improvisar – extintas.',  '');
+
+-- Q8
+INSERT INTO QUESTION (idExam, statement, answer, optionA, optionB, optionC, optionD, optionE)
+VALUES (1, 'Num salão há 7 portas. De quantos modos distintos esse salão pode estar aberto?', 
+'A',
+'127', 
+'128',
+'132',
+'133',
+'');
+
+-- Q9
+INSERT INTO QUESTION (idExam, statement, answer, optionA, optionB, optionC, optionD, optionE)
+VALUES (1, 'Dividir 120 em duas partes tais que 10 vezes a maior seja 
+igual a 14 vezes o menor. Qual a maior delas', 
+'C',
+'65',
+'75', 
+'70', 
+'80',
+ '');
+
+-- Q10
+INSERT INTO QUESTION (idExam, statement, answer, optionA, optionB, optionC, optionD, optionE)
+VALUES (1, 'Uma caixa d\'água tem 5 metros de comprimento, 6 m de
+largura e 4 m de altura. Quantos carros pipas com 8.000
+litros cada um são necessários para enchê-la?', 
+'B',
+'18',
+'10', 
+'15',
+'12', '');
+
+-- Q11
+INSERT INTO QUESTION (idExam, statement, answer, optionA, optionB, optionC, optionD, optionE)
+VALUES (1, 'Assinale a alternativa em que o adjetivo não corresponde
+com a locução adjetiva:', 
+'D', 
+'De nuca – occipital.',
+'De marfim – ebúrneo.', 
+'De bispo – episcopal.',
+'De gesso – níveo.', 
+'');
+
+-- Q12
+INSERT INTO QUESTION (idExam, statement, answer, optionA, optionB, optionC, optionD, optionE)
+VALUES (1, 'Na oração Esqueci-me da prova, o verbo esquecer se
+classifica como:', 
+'C',
+'Intransitivo.', 
+'Transitivo direto.',
+'Transitivo indireto.',
+'Transitivo direto e indireto.', '');
 -- INSERT QUESTION --
 
-
+-- INSERT DISCIPLINA X QUESTION --
+INSERT INTO DISCIPLINE_QUESTION VALUES (1,1);
+INSERT INTO DISCIPLINE_QUESTION VALUES (1,2);
+INSERT INTO DISCIPLINE_QUESTION VALUES (1,3);
+INSERT INTO DISCIPLINE_QUESTION VALUES (1,4);
+INSERT INTO DISCIPLINE_QUESTION VALUES (1,5);
+INSERT INTO DISCIPLINE_QUESTION VALUES (1,6);
+INSERT INTO DISCIPLINE_QUESTION VALUES (1,7);
+INSERT INTO DISCIPLINE_QUESTION VALUES (1,8);
+INSERT INTO DISCIPLINE_QUESTION VALUES (1,9);
+INSERT INTO DISCIPLINE_QUESTION VALUES (2,10);
+INSERT INTO DISCIPLINE_QUESTION VALUES (2,11);
+INSERT INTO DISCIPLINE_QUESTION VALUES (2,12);
+-- INSERT DISCIPLINA X QUESTION --
