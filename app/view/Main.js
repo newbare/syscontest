@@ -20,6 +20,7 @@ Ext.define('SysContest.view.Main', {
 
     items: [{
         region: 'west',
+        collapsible: true,
         xtype: 'panel',
         title: 'SYS CONTEST',
         width: 200,

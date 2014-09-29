@@ -21,29 +21,5 @@ Ext.define('SysContest.view.dxq.DXQWindow',{
 						}
 					]
 				}
-		],
-
-		dockedItems : [
-			{
-				xtype : 'toolbar',
-				dock : 'bottom',
-				layout : {
-					type : 'hbox',
-					pack : 'end'
-				},
-				
-			  items: [
-			   {
-					 xtype : 'button',
-					 text : 'Cancelar',
-					 itemId : 'cancelDXQ',
-					 iconCls : 'icon-remove'
-			  	},
-				 { 
-					xtype : 'button',
-					text : 'Salvar',
-					itemId : 'saveDXQ',
-					iconCls : 'icon-save'
-				}]
-		}]
+		]
 });

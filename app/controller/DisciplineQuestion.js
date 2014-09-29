@@ -12,7 +12,8 @@ Ext.define('SysContest.controller.DisciplineQuestion', {
     views : [
        'SysContest.view.dxq.DXQGrid',
        'SysContest.view.dxq.DXQWindow',
-       'SysContest.view.simulated.SidePanel'
+       'SysContest.view.simulated.SidePanel',
+       'SysContest.view.dxq.DXQForm'
     ],
 
     init : function (application) {
@@ -26,7 +27,13 @@ Ext.define('SysContest.controller.DisciplineQuestion', {
           },
           'dxqwindow button#cancelDXQ' : {
             click : this.onCloseWin
-          }, 
+          },
+          'dxqwindow button#addDXQ' : {
+            click : this.onAddClick
+          },
+          'dxqform button#cancelDXQ' : {
+            click : this.onCancelClick
+          } 
         });
     },
 
@@ -45,5 +52,21 @@ Ext.define('SysContest.controller.DisciplineQuestion', {
       win.close();
     },
 
+    openForm : function (title) {
+       var win = Ext.create('SysContest.view.dxq.DXQForm');
+       win.setTitle(title);
+       return win;
+    },
+
+    onAddClick : function (btn , e, eOpts){
+      this.openForm('Classificador');
+    },
+
+    onCancelClick : function (btn, e, eOpts){
+      var win = btn.up('window');
+      var form = win.down('form');
+      form.getForm().reset();
+      win.close();
+    }
 
 });
