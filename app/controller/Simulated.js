@@ -106,11 +106,13 @@ Ext.define('SysContest.controller.Simulated', {
   },
 
   markLayoutAcept : function (index){
+    Ext.get("Q"+index).removeCls(['alert-message', 'alert-message-info']);
     Ext.get("Q"+index).addCls(['alert-message', 'alert-message-success']);
   },
 
   markLayoutReject : function (index){
-    Ext.get("Q"+index).addCls(['alert-message', 'alert-message-error']);
+    Ext.get("Q"+index).removeCls(['alert-message', 'alert-message-info']);
+    Ext.get("Q"+index).addCls(['alert-message', 'alert-message-danger']);
   },
 
   getUserAnswers : function (){
@@ -138,9 +140,8 @@ Ext.define('SysContest.controller.Simulated', {
     if (this.validate(userAnswers)){
       score = this.computeScore(answers, userAnswers);
       Ext.Msg.alert('Correção', 'Sua nota é ' + score + '!');
-      //window.location.reload();  
-      //var win = btn.up('window');
-
+      var win = btn.up('window');
+      win.doLayout();
     }
     else {
      Ext.Msg.show({
