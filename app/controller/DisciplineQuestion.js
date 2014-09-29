@@ -31,6 +31,9 @@ Ext.define('SysContest.controller.DisciplineQuestion', {
           'dxqwindow button#addDXQ' : {
             click : this.onAddClick
           },
+          'dxqwindow button#deleteDXQ' : {
+            click : this.onDeleteClick
+          },
           'dxqform button#cancelDXQ' : {
             click : this.onCancelClick
           } 
@@ -67,6 +70,19 @@ Ext.define('SysContest.controller.DisciplineQuestion', {
       var form = win.down('form');
       form.getForm().reset();
       win.close();
+    },
+
+    onDeleteClick : function (btn, e, eOpts){
+      Ext.MessageBox.confirm('Atenção','Deseja remover essa Relação?', function(btnConfirm){
+        if (btnConfirm == 'yes'){
+           var grid = btn.up('grid'),
+               records = grid.getSelectionModel().getSelection(),
+               store = grid.getStore();
+           store.remove(records);
+           store.sync(); 
+           Ext.MessageBox.alert('Mensagem','Relação removida!');
+        } 
+      });
     }
 
 });
