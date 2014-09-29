@@ -20,7 +20,9 @@ Ext.define('SysContest.controller.DisciplineQuestion', {
         this.control({
           'dxqwindow' : {
              render : this.onGridRender,
-             //itemdblclick : this.onEditClick
+          },
+          'dxqgrid' : {
+            itemdblclick : this.onEditClick
           },
           'sidepanel button#createDXQ' : {
             click : this.onOpenClick,
@@ -36,6 +38,9 @@ Ext.define('SysContest.controller.DisciplineQuestion', {
           },
           'dxqform button#cancelDXQ' : {
             click : this.onCancelClick
+          },
+          'dxqform button#saveDXQ' : {
+            click : this.onSaveClick
           } 
         });
     },
@@ -72,6 +77,12 @@ Ext.define('SysContest.controller.DisciplineQuestion', {
       win.close();
     },
 
+    onEditClick : function (grid, record, item, index, e, eOpts){
+        var win = this.openForm('Editar Relação');
+        var form = win.down('form');
+        form.loadRecord(record);
+    },
+
     onDeleteClick : function (btn, e, eOpts){
       Ext.MessageBox.confirm('Atenção','Deseja remover essa Relação?', function(btnConfirm){
         if (btnConfirm == 'yes'){
@@ -83,6 +94,27 @@ Ext.define('SysContest.controller.DisciplineQuestion', {
            Ext.MessageBox.alert('Mensagem','Relação removida!');
         } 
       });
+    },
+
+    onSaveClick : function (btn, e, eOpts){
+      var win = btn.up('window'),
+          form = win.down('form'),
+          values = form.getValues(),
+          record = form.getRecord(),
+          grid = Ext.ComponentQuery.query('dxqgrid')[0],
+          store = grid.getStore();
+
+          if (record){
+            record.set(values);
+          }else{
+            var dxq = Ext.create('SysContest.model.DisciplineQuestion',{
+              idDiscipline : values.idDiscipline,
+              idQuestion : values.idQuestion
+             });
+            store.insert(0,dxq);
+          }
+          store.sync();
+          win.close();
     }
 
 });
