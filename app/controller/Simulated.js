@@ -132,7 +132,6 @@ Ext.define('SysContest.controller.Simulated', {
   },
 
   onCkechAnswers : function(btn , e, eOpts){
-    //respostas do usuario
     var userAnswers = this.getUserAnswers(),
         answers = this.getSimulatedAnswers(),
         score = 0;
@@ -140,8 +139,6 @@ Ext.define('SysContest.controller.Simulated', {
     if (this.validate(userAnswers)){
       score = this.computeScore(answers, userAnswers);
       Ext.Msg.alert('Correção', 'Sua nota é ' + score + '!');
-      var win = btn.up('window');
-      win.doLayout();
     }
     else {
      Ext.Msg.show({
