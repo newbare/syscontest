@@ -22,7 +22,7 @@ Ext.define('SysContest.view.Main', {
         region: 'west',
         xtype: 'panel',
         title: 'SYS CONTEST',
-        width: 150,
+        width: 200,
         layout : 'fit',
         items : [
             {

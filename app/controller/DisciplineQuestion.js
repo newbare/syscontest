@@ -22,8 +22,11 @@ Ext.define('SysContest.controller.DisciplineQuestion', {
              //itemdblclick : this.onEditClick
           },
           'sidepanel button#createDXQ' : {
-            click : this.onAddClick,
-          }
+            click : this.onOpenClick,
+          },
+          'dxqwindow button#cancelDXQ' : {
+            click : this.onCloseWin
+          }, 
         });
     },
 
@@ -32,9 +35,15 @@ Ext.define('SysContest.controller.DisciplineQuestion', {
       grid.getStore().load();
     },
 
-    onAddClick : function (btn , e, eOpts){
+    onOpenClick : function (btn , e, eOpts){
       var win = Ext.create('SysContest.view.dxq.DXQWindow');
       return win;
-    }
+    },
+
+    onCloseWin : function (btn, e, eOpts){
+      var win = btn.up('window');
+      win.close();
+    },
+
 
 });
