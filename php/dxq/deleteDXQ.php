@@ -4,14 +4,16 @@
 
 	$info = $_POST['data'];
 
-	//$data = json_decode(stripslashes($info));
+
 	$data = json_decode($info);
 
-	$id = $data->idInstitution;
+	$idDiscipline = $data->idDiscipline;
+	$idQuestion = $data->idQuestion;
 
 	//consulta sql
-	$query = sprintf("DELETE FROM institution WHERE idInstitution=%d",
-		mysql_real_escape_string($id));
+	$query = sprintf("DELETE FROM discipline_question WHERE idDiscipline=%d AND idQuestion=%d",
+		mysql_real_escape_string($idDiscipline),
+		mysql_real_escape_string($idQuestion));
 
 	$rs = mysql_query($query);
 
