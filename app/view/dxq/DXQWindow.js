@@ -5,8 +5,8 @@ Ext.define('SysContest.view.dxq.DXQWindow',{
 		width  : 400,
 		modal  : true,
 		layout : 'fit',
-	 iconCls : 'icon-dqx',
-	 title : 'Disciplina X Questão',
+	 iconCls : 'icon-dxq',
+	 title : 'Classificar por Disciplina',
 		autoShow : true,
 
 		items : [
@@ -17,7 +17,7 @@ Ext.define('SysContest.view.dxq.DXQWindow',{
 					},
 					items : [
 						{
-							// xtype : 'simulatedpanel',
+								 xtype : 'dxqgrid',
 						}
 					]
 				}

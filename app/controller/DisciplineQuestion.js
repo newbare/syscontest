@@ -1,4 +1,4 @@
-Ext.define('SysContest.controller.Discipline', {
+Ext.define('SysContest.controller.DisciplineQuestion', {
     extend: 'Ext.app.Controller',
 
     models : [
@@ -16,14 +16,15 @@ Ext.define('SysContest.controller.Discipline', {
 
     init : function (application) {
         this.control({
-          'dxqgrid' : {
+          'dxqwindow' : {
              render : this.onGridRender,
              //itemdblclick : this.onEditClick
           }
         });
     },
 
-    onGridRender : function (grid, eOpts){
+    onGridRender : function (window, eOpts){
+      var grid = window.down('grid');
       grid.getStore().load();
     }
 
