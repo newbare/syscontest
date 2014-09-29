@@ -3,17 +3,17 @@ Ext.define ('SysContest.view.dxq.DXQGrid',{
 	 alias : 'widget.dxqgrid',
 	 store : 'SysContest.store.DisciplinesQuestions',
 	 title : 'Disciplinas X Questões',
-	 iconCls : 'icon-db',
+	 iconCls : 'icon-dxq',
 
 	 columns : [
 	 		{
-	 			text: 'ID Disciplina',
-	 			width : 150,
+	 			text: 'Código da Disciplina',
+	 			width : 300,
 	 			dataIndex : 'idDiscipline'
 	 		},
 	 		{
-	 			text  : 'ID Questão',
-	 			width : 150,
+	 			text  : 'Código da Questão',
+	 			width : 300,
 	 			dataIndex : 'idQuestion'
 	 		}
 	 ],
@@ -26,13 +26,13 @@ Ext.define ('SysContest.view.dxq.DXQGrid',{
 	 			{
 	 				xtype : 'button',
 	 				text  : 'Criar',
-	 				itemId : 'addDiscipline',
+	 				itemId : 'addDXQ',
 	 				iconCls : 'icon-plus'
 	 			},
 	 			{
 	 				xtype  : 'button',
 	 				text   : 'Excluir',
-	 				itemId : 'deleteDiscipline',
+	 				itemId : 'deleteDXQ',
 	 				iconCls : 'icon-trash'
 	 			}
 

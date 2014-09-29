@@ -3,15 +3,15 @@ Ext.define('SysContest.store.DisciplinesQuestions',{
 
 	 model : 'SysContest.model.DisciplineQuestion',
 
-	 pageSize : 25,
+	 pageSize : 10,
 
 	 proxy : {
 	 		type : 'ajax',
 	 		api : {
-	 			 create  : 'php/dxq/createDQ.php',
-	 			 read    : 'php/dxq/listDQs.php',
-	 			 update  : 'php/dxq/updateDQ.php',
-	 			 destroy : 'php/dxq/deleteDQ.php'
+	 			 create  : 'php/dxq/createDXQ.php',
+	 			 read    : 'php/dxq/listDXQs.php',
+	 			 update  : 'php/dxq/updateDXQ.php',
+	 			 destroy : 'php/dxq/deleteDXQ.php'
 	 		},
 	 		reader : {
 	 			type : 'json',

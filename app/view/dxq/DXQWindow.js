@@ -2,10 +2,10 @@ Ext.define('SysContest.view.dxq.DXQWindow',{
 		extend : 'Ext.window.Window',
 		alias  : 'widget.dxqwindow',
 		heigth : 100,
-		width  : 400,
+		width  : 600,
 		modal  : true,
 		layout : 'fit',
-	 iconCls : 'icon-dxq',
+	 iconCls : 'icon-db',
 	 title : 'Classificar por Disciplina',
 		autoShow : true,
 
