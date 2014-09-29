@@ -1,21 +1,20 @@
-Ext.define ('SysContest.view.discipline.DisciplinesGrid',{
+Ext.define ('SysContest.view.dxq.DXQGrid',{
 	 extend : 'Ext.grid.Panel',
-	 alias : 'widget.disciplinesgrid',
-	 store : 'SysContest.store.Disciplines',
-	 title : 'Disciplinas Cadastradas',
-	 iconCls : 'icon-discipline',
+	 alias : 'widget.dxqgrid',
+	 store : 'SysContest.store.DisciplinesQuestions',
+	 title : 'Disciplinas X Questões',
+	 iconCls : 'icon-dxq',
 
 	 columns : [
 	 		{
-	 			text: 'ID',
-	 			width : 35,
+	 			text: 'ID Disciplina',
+	 			width : 150,
 	 			dataIndex : 'idDiscipline'
 	 		},
 	 		{
-	 			text  : 'Nome da Disciplina',
-	 			width : 300,
-	 			flex : 1,
-	 			dataIndex : 'name'
+	 			text  : 'ID Questão',
+	 			width : 150,
+	 			dataIndex : 'idQuestion'
 	 		}
 	 ],
 
@@ -26,7 +25,7 @@ Ext.define ('SysContest.view.discipline.DisciplinesGrid',{
 	 		items : [
 	 			{
 	 				xtype : 'button',
-	 				text  : 'Adicionar',
+	 				text  : 'Criar',
 	 				itemId : 'addDiscipline',
 	 				iconCls : 'icon-plus'
 	 			},
@@ -44,7 +43,7 @@ Ext.define ('SysContest.view.discipline.DisciplinesGrid',{
 	 		dock : 'bottom',
 	 		displayInfo : 'true',
 	 		displayMsg: 'Mostrando Relações {0} - {1} de {2}',
-	 		emptyMsg : 'Nenhuma Questão relacionada com Disciplina.'
+	 		emptyMsg : 'Nenhuma Relação encontrada.'
 	 	}
 	 ]
 });
