@@ -11,7 +11,8 @@ Ext.define('SysContest.controller.DisciplineQuestion', {
 
     views : [
        'SysContest.view.dxq.DXQGrid',
-       'SysContest.view.dxq.DXQWindow'
+       'SysContest.view.dxq.DXQWindow',
+       'SysContest.view.simulated.SidePanel'
     ],
 
     init : function (application) {
@@ -19,6 +20,9 @@ Ext.define('SysContest.controller.DisciplineQuestion', {
           'dxqwindow' : {
              render : this.onGridRender,
              //itemdblclick : this.onEditClick
+          },
+          'sidepanel button#createDXQ' : {
+            click : this.onAddClick,
           }
         });
     },
@@ -26,7 +30,11 @@ Ext.define('SysContest.controller.DisciplineQuestion', {
     onGridRender : function (window, eOpts){
       var grid = window.down('grid');
       grid.getStore().load();
+    },
+
+    onAddClick : function (btn , e, eOpts){
+      var win = Ext.create('SysContest.view.dxq.DXQWindow');
+      return win;
     }
 
-     
 });
