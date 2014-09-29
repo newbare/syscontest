@@ -3,7 +3,7 @@ Ext.define ('SysContest.view.dxq.DXQGrid',{
 	 alias : 'widget.dxqgrid',
 	 store : 'SysContest.store.DisciplinesQuestions',
 	 title : 'Disciplinas X Questões',
-	 iconCls : 'icon-dxq',
+	 iconCls : 'icon-db',
 
 	 columns : [
 	 		{
