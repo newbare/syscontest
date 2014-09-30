@@ -1,12 +1,12 @@
-Ext.define('SysContest.view.dxq.DXQWindow',{
+Ext.define('SysContest.view.sxq.SXQWindow',{
 		extend : 'Ext.window.Window',
-		alias  : 'widget.dxqwindow',
+		alias  : 'widget.sxqwindow',
 		heigth : 100,
 		width  : 600,
 		modal  : true,
 		layout : 'fit',
 	 iconCls : 'icon-db',
-	 title : 'Classificar por Disciplina',
+	 title : 'Classificar por Assunto',
 		autoShow : true,
 
 		items : [
@@ -17,7 +17,7 @@ Ext.define('SysContest.view.dxq.DXQWindow',{
 					},
 					items : [
 						{
-								 xtype : 'dxqgrid',
+								 xtype : 'sxqgrid',
 						}
 					]
 				}
