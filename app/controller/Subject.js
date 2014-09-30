@@ -25,7 +25,10 @@ Ext.define('SysContest.controller.Subject', {
          },
          'subjectsgrid button#deleteSubject' : {
           click : this.onDeleteClick
-         }
+         },
+         'subjectsform button#cancelSubject' : {
+            click : this.onCancelClick
+          }
 
       });
     },
@@ -61,6 +64,13 @@ Ext.define('SysContest.controller.Subject', {
            Ext.MessageBox.alert('Mensagem','Assunto removido!');
         } 
       });
+    },
+
+    onCancelClick : function (btn, e, eOpts){
+      var win = btn.up('window');
+      var form = win.down('form');
+      form.getForm().reset();
+      win.close();
     }
 
 });
