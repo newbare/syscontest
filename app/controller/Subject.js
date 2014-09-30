@@ -38,7 +38,7 @@ Ext.define('SysContest.controller.Subject', {
     },
 
     onAddClick : function (btn , e, eOpts){
-      this.openForm('Nova Disciplina');
+      this.openForm('Nova Assunto');
     },
 
     onEditClick : function (grid, record, item, index, e, eOpts){

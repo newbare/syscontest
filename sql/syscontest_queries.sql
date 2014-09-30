@@ -20,3 +20,4 @@ WHERE   Q.idQuestion = DQ.idQuestion AND
 		D.idDiscipline = 1;
 -- CONSULTAR AS QUESTOES DA DISCIPLINA PORTUGUES --
 
+

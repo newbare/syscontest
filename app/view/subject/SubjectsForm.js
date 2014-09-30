@@ -25,13 +25,7 @@ Ext.define('SysContest.view.subject.SubjectsForm',{
 							xtype : 'textfield',
 							name : 'name',
 							fieldLabel : 'Assunto'
-						},{
-							xtype : 'combo',
-							fieldLabel: 'Disciplina', 
-							displayField: 'name',
-							valueField: 'idDiscipline',
-							store: 'SysContest.store.Disciplines'
-				  }
+						}
 					]
 				}
 		],

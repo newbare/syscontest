@@ -11,7 +11,7 @@
 	$idDiscipline = $data->idDiscipline;
 	
 	//sql query
-	$query = sprintf("INSERT INTO subject (name, idDiscipline) values ('%s', %d)",
+	$query = sprintf("INSERT INTO subject (name) values ('%s')",
 		mysql_real_escape_string($name),
 		mysql_real_escape_string($idDiscipline));
 
@@ -21,6 +21,5 @@
 		"success" => mysql_errno() == 0,
 		"data" => array(
 		"idSubject" => mysql_insert_id(),
-		"name" => $name,
-		"idDiscipline" => $idDiscipline)
+		"name" => $name)
 	));
