@@ -54,6 +54,12 @@ Ext.define('SysContest.view.simulated.SidePanel',{
            items : [
               {
                    xtype : 'button',
+                   text : 'Disciplina',
+                   itemId : 'openSXQ',
+                   iconCls : 'icon-relation'
+              },
+              {
+                   xtype : 'button',
                    text : 'Assunto',
                    itemId : 'createSXQ',
                    iconCls : 'icon-relation'

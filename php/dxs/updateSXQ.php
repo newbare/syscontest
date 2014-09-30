@@ -20,7 +20,7 @@
 	echo json_encode(array(
 		"success" => mysql_errno() == 0,
 		"data" => array(
-			"idSubject" => $idDiscipline,
-			"idQuestion" => $idSubject,
-		 "idSXQ" => $idDXS)
+			"idDiscipline" => $idDiscipline,
+			"idSubject" => $idSubject,
+		 "idDXS" => $idDXS)
 	));

@@ -10,10 +10,10 @@ Ext.define('SysContest.controller.DisciplineSubject', {
     ],
 
     views : [
-      // 'SysContest.view.dxs.DXSGrid',
-      // 'SysContest.view.dxs.DXSWindow',
-      // 'SysContest.view.simulated.SidePanel',
-      // 'SysContest.view.dxs.DXSForm'
+      'SysContest.view.dxs.DXSGrid',
+      'SysContest.view.dxs.DXSWindow',
+      'SysContest.view.simulated.SidePanel',
+      'SysContest.view.dxs.DXSForm'
     ],
 
     init : function (application) {
