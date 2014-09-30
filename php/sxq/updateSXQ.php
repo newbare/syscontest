@@ -5,14 +5,15 @@
 	$info = $_POST['data'];
 
 	$data = json_decode($info);
-
+ $idSXQ = $data->idSXQ;
 	$idSubject = $data->idSubject;
 	$idQuestion = $data->idQuestion;
 
 	//sql  query
-	$query = sprintf("UPDATE subject_question SET idSubject = '%d', idQuestion='%d' WHERE idSubject=%d AND idQuestion=%d",
+	$query = sprintf("UPDATE subject_question SET idSubject = '%d', idQuestion='%d' WHERE idSXQ=%d",
 		mysql_real_escape_string($idSubject),
-		mysql_real_escape_string($idQuestion));
+		mysql_real_escape_string($idQuestion),
+		mysql_real_escape_string($idSXQ));
 
 	$rs = mysql_query($query);
 
@@ -20,5 +21,6 @@
 		"success" => mysql_errno() == 0,
 		"data" => array(
 			"idSubject" => $idSubject,
-			"idQuestion" => $idQuestion)
+			"idQuestion" => $idQuestion,
+		 "idSXQ" => $idSXQ)
 	));

@@ -10,7 +10,7 @@
 	$idQuestion = $data->idQuestion;
 	
 	//sql query
-	$query = sprintf("INSERT INTO subject_question values ('%d','%d')",
+	$query = sprintf("INSERT INTO subject_question (idSubject, idQuestion) values ('%d','%d')",
 		mysql_real_escape_string($idSubject),
 		mysql_real_escape_string($idQuestion));
 
@@ -19,6 +19,7 @@
 	echo json_encode(array(
 		"success" => mysql_errno() == 0,
 		"data" => array(
+			"idSXQ" =>  mysql_insert_id(),
 			"idSubject" => $idSubject,
 			"idQuestion" => $idQuestion)
 	));
