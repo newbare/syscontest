@@ -3,6 +3,8 @@ syscontest
 
 Software de análise e gestão em base de dados para provas e simulados.
 
+![syscontest](https://cloud.githubusercontent.com/assets/3028970/4451865/1283b846-483d-11e4-9819-4e38856bf7b9.PNG)
+
 # SysContest/app
 
 This folder contains the javascript files for the application.
