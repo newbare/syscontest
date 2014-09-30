@@ -18,10 +18,23 @@ Ext.define('SysContest.controller.DisciplineSubject', {
 
     init : function (application) {
         this.control({
-         
+         'dxswindow' : {
+             render : this.onGridRender,
+          },
+          'sidepanel button#openDXS' : {
+            click : this.onOpenClick,
+          }
         });
-    }
+    },
 
-   
+    onGridRender : function (window, eOpts){
+      var grid = window.down('grid');
+      grid.getStore().load();
+    },
+
+    onOpenClick : function (btn , e, eOpts){
+      var win = Ext.create('SysContest.view.dxs.DXSWindow');
+      return win;
+    }   
 
 });

@@ -55,7 +55,7 @@ Ext.define('SysContest.view.simulated.SidePanel',{
               {
                    xtype : 'button',
                    text : 'Disciplina',
-                   itemId : 'openSXQ',
+                   itemId : 'openDXS',
                    iconCls : 'icon-relation'
               },
               {
