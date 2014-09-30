@@ -16,11 +16,6 @@ Ext.define ('SysContest.view.subject.SubjectsGrid', {
 	 			width : 300,
 	 			flex : 1,
 	 			dataIndex : 'name'
-	 		},
-	 		{
-	 			text : 'Disciplina ID',
-	 			width : 100,
-	 			dataIndex : 'idDiscipline'
 	 		}
 	 ],
 
