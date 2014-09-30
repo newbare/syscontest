@@ -41,8 +41,8 @@ Ext.define('SysContest.view.simulated.SidePanel',{
     	},
 			{
         title: 'Classificadores',
-        html: '<p>Criar relações entre os dados na base de dados.</p>',
-        bodyStyle: 'padding:2px',
+        html: '<p>Criar relações entre os Assuntos, as Disciplinas e as Questões.</p>',
+       // bodyStyle: 'padding:2px',
         dockedItems : [
         {
            xtype : 'toolbar',
@@ -54,8 +54,8 @@ Ext.define('SysContest.view.simulated.SidePanel',{
            items : [
               {
                    xtype : 'button',
-                   text : 'Disciplina',
-                   itemId : 'createDXQ',
+                   text : 'Assunto',
+                   itemId : 'createSXQ',
                    iconCls : 'icon-relation'
               }
          ]

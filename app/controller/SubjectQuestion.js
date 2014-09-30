@@ -108,7 +108,7 @@ Ext.define('SysContest.controller.SubjectQuestion', {
             record.set(values);
           }else{
             var sxq = Ext.create('SysContest.model.SubjectQuestion',{
-              idSubject : values.idDiscipline,
+              idSubject : values.idSubject,
               idQuestion : values.idQuestion
              });
             store.insert(0,sxq);
