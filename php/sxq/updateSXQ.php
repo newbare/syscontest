@@ -12,8 +12,6 @@
 	//sql  query
 	$query = sprintf("UPDATE subject_question SET idSubject = '%d', idQuestion='%d' WHERE idSubject=%d AND idQuestion=%d",
 		mysql_real_escape_string($idSubject),
-		mysql_real_escape_string($idQuestion),
-		mysql_real_escape_string($idSubject),
 		mysql_real_escape_string($idQuestion));
 
 	$rs = mysql_query($query);

@@ -53,17 +53,19 @@ CREATE TABLE QUESTION (
 );
 
 CREATE TABLE DISCIPLINE_SUBJECT(
+	idDXS				INT 	NOT NULL AUTO_INCREMENT,
 	idDiscipline 		INT		NOT NULL,
 	idSubject			INT 	NOT NULL,
-	CONSTRAINT 	disciplineSubjectPKC PRIMARY KEY (idDiscipline, idSubject),
+	CONSTRAINT 	disciplineSubjectPKC PRIMARY KEY (idDXS, idDiscipline, idSubject),
 	CONSTRAINT 	disciplineSubjectFKT FOREIGN KEY (idDiscipline) REFERENCES DISCIPLINE (idDiscipline),
 	CONSTRAINT 	disciplineSubjectFKT2 FOREIGN KEY  (idSubject) REFERENCES SUBJECT (idSubject)
 );
 
 CREATE TABLE SUBJECT_QUESTION (
+	idSXQ				INT 	NOT NULL AUTO_INCREMENT,
 	idSubject	 		INT 	NOT NULL,
 	idQuestion			INT 	NOT NULL,
-	CONSTRAINT subjectQuestionPKC PRIMARY KEY (idSubject, idQuestion),
+	CONSTRAINT subjectQuestionPKC PRIMARY KEY (idSXQ, idSubject, idQuestion),
 	CONSTRAINT subjectQuestionFKT FOREIGN KEY (idSubject) REFERENCES SUBJECT (idSubject),
 	CONSTRAINT subjectQuestionFKT2 FOREIGN KEY (idQuestion) REFERENCES QUESTION (idQuestion) 
 );
