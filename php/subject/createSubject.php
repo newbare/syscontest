@@ -8,12 +8,12 @@
 	$data = json_decode($info);
 
 	$name = $data->name;
-	$idDiscipline = $data->idDiscipline;
+	$idSubject = $data->idSubject;
 	
 	//sql query
 	$query = sprintf("INSERT INTO subject (name) values ('%s')",
 		mysql_real_escape_string($name),
-		mysql_real_escape_string($idDiscipline));
+		mysql_real_escape_string($idSubject));
 
 	$rs = mysql_query($query);
 

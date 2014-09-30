@@ -28,6 +28,9 @@ Ext.define('SysContest.controller.Subject', {
          },
          'subjectsform button#cancelSubject' : {
             click : this.onCancelClick
+          },
+          'subjectsform button#saveSubject' : {
+              click : this.onSaveClick
           }
 
       });
@@ -71,6 +74,27 @@ Ext.define('SysContest.controller.Subject', {
       var form = win.down('form');
       form.getForm().reset();
       win.close();
+    },
+
+    onSaveClick : function (btn, e, eOpts){
+      var win = btn.up('window'),
+          form = win.down('form'),
+          values = form.getValues(),
+          record = form.getRecord(),
+          grid = Ext.ComponentQuery.query('subjectsgrid')[0],
+          store = grid.getStore();
+
+          if (record){
+            record.set(values);
+          }else{
+            var discipline = Ext.create('SysContest.model.Subject',{
+              idSubject : values.idSubject,
+              name : values.name
+            });
+            store.insert(0,discipline);
+          }
+          store.sync();
+          win.close();
     }
 
 });
