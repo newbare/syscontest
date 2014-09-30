@@ -1,17 +1,17 @@
 <?php
-	//calling the connection file
+	//calling the connection files
 	include("../connect.php");
 
 	$info = $_POST['data'];
 
 	$data = json_decode($info);
 
-	$idDiscipline = $data->idDiscipline;
+	$idSubject = $data->idSubject;
 	$idQuestion = $data->idQuestion;
-	
-	//sql query
-	$query = sprintf("INSERT INTO discipline_question values ('%d','%d')",
-		mysql_real_escape_string($idDiscipline),
+
+	//sql  query
+	$query = sprintf("UPDATE subject_question SET idSubjet = '%d', idQuestion='%d' WHERE idSubject=%d AND idQuestion=%d",
+		mysql_real_escape_string($idSubject),
 		mysql_real_escape_string($idQuestion));
 
 	$rs = mysql_query($query);
@@ -19,6 +19,6 @@
 	echo json_encode(array(
 		"success" => mysql_errno() == 0,
 		"data" => array(
-			"idDiscipline" => $idDiscipline,
+			"idSubject" => $idSubject,
 			"idQuestion" => $idQuestion)
 	));

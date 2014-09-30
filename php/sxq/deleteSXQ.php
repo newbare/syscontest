@@ -7,12 +7,12 @@
 
 	$data = json_decode($info);
 
-	$idDiscipline = $data->idDiscipline;
+	$idSubject = $data->idSubject;
 	$idQuestion = $data->idQuestion;
 
 	//consulta sql
-	$query = sprintf("DELETE FROM discipline_question WHERE idDiscipline=%d AND idQuestion=%d",
-		mysql_real_escape_string($idDiscipline),
+	$query = sprintf("DELETE FROM subject_question WHERE idSubject=%d AND idQuestion=%d",
+		mysql_real_escape_string($idSubject),
 		mysql_real_escape_string($idQuestion));
 
 	$rs = mysql_query($query);
