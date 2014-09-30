@@ -1,12 +1,12 @@
-Ext.define('SysContest.view.dxq.DXQForm',{
+Ext.define('SysContest.view.sxq.SXQForm',{
 		extend : 'Ext.window.Window',
-		alias  : 'widget.dxqform',
+		alias  : 'widget.sxqform',
 
 		heigth : 100,
 		width  : 300,
 		modal  : true,
 		layout : 'fit',
-	 iconCls : 'icon-dxq',
+	 iconCls : 'icon-sxq',
 	 title : 'Editar/Criar Relação',
 		autoShow : true,
 
@@ -20,9 +20,9 @@ Ext.define('SysContest.view.dxq.DXQForm',{
 					items : [
 						{
 							xtype : 'numberfield',
-							name : 'idDiscipline',
+							name : 'idSubject',
 							labelAlign: 'top',
-							fieldLabel : 'Código da Disciplina',
+							fieldLabel : 'Código da Assunto',
 							value: 1,
        minValue: 1,
        maxValue: 20000
@@ -53,13 +53,13 @@ Ext.define('SysContest.view.dxq.DXQForm',{
 			   {
 					 xtype : 'button',
 					 text : 'Cancelar',
-					 itemId : 'cancelDXQ',
+					 itemId : 'cancelSXQ',
 					 iconCls : 'icon-del'
 			  	},
 				 {
 					xtype : 'button',
 					text : 'Salvar',
-					itemId : 'saveDXQ',
+					itemId : 'saveSXQ',
 					iconCls : 'icon-save'
 				}]
 		}]
