@@ -1,15 +1,15 @@
-Ext.define ('SysContest.view.dxq.DXQGrid',{
+Ext.define ('SysContest.view.sxq.SXQGrid',{
 	 extend : 'Ext.grid.Panel',
-	 alias : 'widget.dxqgrid',
-	 store : 'SysContest.store.DisciplinesQuestions',
-	 title : 'Disciplinas X Questões',
+	 alias : 'widget.sxqgrid',
+	 store : 'SysContest.store.SubjectsQuestions',
+	 title : 'Assunto X Questão',
 	 iconCls : 'icon-dxq',
 
 	 columns : [
 	 		{
-	 			text: 'Código da Disciplina',
+	 			text: 'Código do Assunto',
 	 			width : 300,
-	 			dataIndex : 'idDiscipline'
+	 			dataIndex : 'idSubject'
 	 		},
 	 		{
 	 			text  : 'Código da Questão',
@@ -26,20 +26,20 @@ Ext.define ('SysContest.view.dxq.DXQGrid',{
 	 			{
 	 				xtype : 'button',
 	 				text  : 'Criar',
-	 				itemId : 'addDXQ',
+	 				itemId : 'addSXQ',
 	 				iconCls : 'icon-plus'
 	 			},
 	 			{
 	 				xtype  : 'button',
 	 				text   : 'Excluir',
-	 				itemId : 'deleteDXQ',
+	 				itemId : 'deleteSXQ',
 	 				iconCls : 'icon-trash'
 	 			}
 
 	 		]
 	 	},{
 	 		xtype : 'pagingtoolbar',
-	 		store : 'SysContest.store.DisciplinesQuestions',
+	 		store : 'SysContest.store.SubjectsQuestions',
 	 		dock : 'bottom',
 	 		displayInfo : 'true',
 	 		displayMsg: 'Mostrando Relações {0} - {1} de {2}',
