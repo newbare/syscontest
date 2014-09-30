@@ -1,45 +1,45 @@
-Ext.define('SysContest.controller.DisciplineQuestion', {
+Ext.define('SysContest.controller.SubjectQuestion', {
     extend: 'Ext.app.Controller',
 
     models : [
-       'SysContest.model.DisciplineQuestion'
+       'SysContest.model.SubjectQuestion'
     ],
 
     stores : [
-       'SysContest.store.DisciplinesQuestions'
+       'SysContest.store.SubjectsQuestions'
     ],
 
     views : [
-       'SysContest.view.dxq.DXQGrid',
-       'SysContest.view.dxq.DXQWindow',
+       'SysContest.view.sxq.SXQGrid',
+       'SysContest.view.sxq.SXQWindow',
        'SysContest.view.simulated.SidePanel',
-       'SysContest.view.dxq.DXQForm'
+       'SysContest.view.sxq.SXQForm'
     ],
 
     init : function (application) {
         this.control({
-          'dxqwindow' : {
+          'sxqwindow' : {
              render : this.onGridRender,
           },
-          'dxqgrid' : {
+          'sxqgrid' : {
             itemdblclick : this.onEditClick
           },
-          'sidepanel button#createDXQ' : {
+          'sidepanel button#createSXQ' : {
             click : this.onOpenClick,
           },
-          'dxqwindow button#cancelDXQ' : {
+          'sxqwindow button#cancelSXQ' : {
             click : this.onCloseWin
           },
-          'dxqwindow button#addDXQ' : {
+          'sxqwindow button#addSXQ' : {
             click : this.onAddClick
           },
-          'dxqwindow button#deleteDXQ' : {
+          'sxqwindow button#deleteSXQ' : {
             click : this.onDeleteClick
           },
-          'dxqform button#cancelDXQ' : {
+          'sxqform button#cancelSXQ' : {
             click : this.onCancelClick
           },
-          'dxqform button#saveDXQ' : {
+          'sxqform button#saveSXQ' : {
             click : this.onSaveClick
           } 
         });
@@ -51,7 +51,7 @@ Ext.define('SysContest.controller.DisciplineQuestion', {
     },
 
     onOpenClick : function (btn , e, eOpts){
-      var win = Ext.create('SysContest.view.dxq.DXQWindow');
+      var win = Ext.create('SysContest.view.sxq.SXQWindow');
       return win;
     },
 
@@ -61,7 +61,7 @@ Ext.define('SysContest.controller.DisciplineQuestion', {
     },
 
     openForm : function (title) {
-       var win = Ext.create('SysContest.view.dxq.DXQForm');
+       var win = Ext.create('SysContest.view.sxq.SXQForm');
        win.setTitle(title);
        return win;
     },
@@ -101,17 +101,17 @@ Ext.define('SysContest.controller.DisciplineQuestion', {
           form = win.down('form'),
           values = form.getValues(),
           record = form.getRecord(),
-          grid = Ext.ComponentQuery.query('dxqgrid')[0],
+          grid = Ext.ComponentQuery.query('sxqgrid')[0],
           store = grid.getStore();
 
           if (record){
             record.set(values);
           }else{
-            var dxq = Ext.create('SysContest.model.DisciplineQuestion',{
-              idDiscipline : values.idDiscipline,
+            var sxq = Ext.create('SysContest.model.SubjectQuestion',{
+              idSubject : values.idDiscipline,
               idQuestion : values.idQuestion
              });
-            store.insert(0,dxq);
+            store.insert(0,sxq);
           }
           store.sync();
           win.close();
