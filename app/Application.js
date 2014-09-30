@@ -24,7 +24,7 @@ Ext.define('SysContest.Application', {
         'Exam',
         'Question',
         'Simulated',
-        'DisciplineQuestion'
+        'SubjectQuestion'
     ],
 
     stores: [
