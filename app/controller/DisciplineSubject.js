@@ -26,6 +26,9 @@ Ext.define('SysContest.controller.DisciplineSubject', {
           },
           'dxswindow button#addDXS' : {
             click : this.onAddClick
+          },
+          'dxsgrid button#deleteDXS' : {
+            click : this.onDeleteClick
           }
         });
     },
@@ -48,6 +51,19 @@ Ext.define('SysContest.controller.DisciplineSubject', {
     onOpenClick : function (btn , e, eOpts){
       var win = Ext.create('SysContest.view.dxs.DXSWindow');
       return win;
+    },
+
+    onDeleteClick : function (btn, e, eOpts){
+      Ext.MessageBox.confirm('Atenção','Deseja remover essa Relação?', function(btnConfirm){
+        if (btnConfirm == 'yes'){
+           var grid = btn.up('grid'),
+               records = grid.getSelectionModel().getSelection(),
+               store = grid.getStore();
+           store.remove(records);
+           store.sync(); 
+           Ext.MessageBox.alert('Mensagem','Relação removida!');
+        } 
+      });
     }   
 
 });
