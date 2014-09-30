@@ -1,6 +1,6 @@
-Ext.define('SysContest.view.sxq.SXQForm',{
+Ext.define('SysContest.view.dxs.DXSForm',{
 		extend : 'Ext.window.Window',
-		alias  : 'widget.sxqform',
+		alias  : 'widget.dxsform',
 
 		heigth : 100,
 		width  : 300,
@@ -20,18 +20,18 @@ Ext.define('SysContest.view.sxq.SXQForm',{
 					items : [
 						{
 							xtype : 'numberfield',
-							name : 'idSubject',
+							name : 'idDisciplina',
 							labelAlign: 'top',
-							fieldLabel : 'Código do Assunto',
+							fieldLabel : 'Código da Disciplina',
 							value: 1,
        minValue: 1,
        maxValue: 20000
 						},
 						{
 							xtype : 'numberfield',
-							name : 'idQuestion',
+							name : 'idSubject',
 							labelAlign: 'top',
-							fieldLabel : 'Código da Questão',
+							fieldLabel : 'Código do Assunto',
 							value: 1,
        minValue: 1,
        maxValue: 20000
@@ -53,13 +53,13 @@ Ext.define('SysContest.view.sxq.SXQForm',{
 			   {
 					 xtype : 'button',
 					 text : 'Cancelar',
-					 itemId : 'cancelSXQ',
+					 itemId : 'cancelDXS',
 					 iconCls : 'icon-del'
 			  	},
 				 {
 					xtype : 'button',
 					text : 'Salvar',
-					itemId : 'saveSXQ',
+					itemId : 'saveDXS',
 					iconCls : 'icon-save'
 				}]
 		}]
