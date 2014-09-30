@@ -3,7 +3,7 @@ Ext.define('SysContest.store.Exames',{
 
 	 model : 'SysContest.model.Exam',
 
-	 pageSize : 25,
+	 pageSize : 20,
 
 	 proxy : {
 	 		type : 'ajax',

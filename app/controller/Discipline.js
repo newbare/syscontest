@@ -76,7 +76,7 @@ Ext.define('SysContest.controller.Discipline', {
       win.close();
     },
 
-     onSaveClick : function (btn, e, eOpts){
+    onSaveClick : function (btn, e, eOpts){
       var win = btn.up('window'),
           form = win.down('form'),
           values = form.getValues(),
