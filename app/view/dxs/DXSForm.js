@@ -6,7 +6,7 @@ Ext.define('SysContest.view.dxs.DXSForm',{
 		width  : 300,
 		modal  : true,
 		layout : 'fit',
-	 iconCls : 'icon-sxq',
+	 iconCls : 'icon-dxs',
 	 title : 'Editar/Criar Relação',
 		autoShow : true,
 

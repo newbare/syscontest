@@ -23,6 +23,9 @@ Ext.define('SysContest.controller.DisciplineSubject', {
           },
           'sidepanel button#openDXS' : {
             click : this.onOpenClick,
+          },
+          'dxswindow button#addDXS' : {
+            click : this.onAddClick
           }
         });
     },
@@ -30,6 +33,16 @@ Ext.define('SysContest.controller.DisciplineSubject', {
     onGridRender : function (window, eOpts){
       var grid = window.down('grid');
       grid.getStore().load();
+    },
+
+    openForm : function (title) {
+       var win = Ext.create('SysContest.view.dxs.DXSForm');
+       win.setTitle(title);
+       return win;
+    },
+
+    onAddClick : function (btn , e, eOpts){
+      this.openForm('Classificador');
     },
 
     onOpenClick : function (btn , e, eOpts){
