@@ -11,7 +11,8 @@ Ext.define('SysContest.controller.Simulated', {
 
     views : [
        'SysContest.view.simulated.SimulatedWindow',
-       'SysContest.view.simulated.SidePanel'
+       'SysContest.view.simulated.SidePanel',
+       'SysContest.view.simulated.FilterForm'
     ],
 
     init : function (application) {

@@ -70,7 +70,11 @@ Ext.define('SysContest.view.simulated.SidePanel',{
     	},
     	{
         title: 'Filtros',
-        html: '<p>Aplicar filtros os seus simulados.</p>'
+        items: [
+          {
+            xtype : 'filterform'
+          }
+        ]
     	},{
         title: 'Base de Dados',
         html: '<p>Gerenciar base de dados aqui.</p>'
