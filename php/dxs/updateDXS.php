@@ -10,7 +10,7 @@
 	$idDiscipline = $data->idDiscipline;
 
 	//sql  query
-	$query = sprintf("UPDATE discipline_subject SET idSubject = '%d', idQuestion='%d' WHERE idDXS=%d",
+	$query = sprintf("UPDATE discipline_subject SET idDiscipline= '%d', idSubject='%d' WHERE idDXS=%d",
 		mysql_real_escape_string($idDiscipline),
 		mysql_real_escape_string($idSubject),
 		mysql_real_escape_string($idDXS));

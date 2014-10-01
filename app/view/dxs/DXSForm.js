@@ -20,7 +20,7 @@ Ext.define('SysContest.view.dxs.DXSForm',{
 					items : [
 						{
 							xtype : 'numberfield',
-							name : 'idDisciplina',
+							name : 'idDiscipline',
 							labelAlign: 'top',
 							fieldLabel : 'Código da Disciplina',
 							value: 1,

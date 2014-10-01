@@ -35,7 +35,10 @@ Ext.define('SysContest.controller.DisciplineSubject', {
           },
           'dxsform button#cancelDXS' : {
             click : this.onCancelClick
-          }
+          },
+          'dxsform button#saveDXS' : {
+            click : this.onSaveClick
+          } 
         });
     },
 
@@ -83,6 +86,27 @@ Ext.define('SysContest.controller.DisciplineSubject', {
         var win = this.openForm('Editar Relação');
         var form = win.down('form');
         form.loadRecord(record);
+    },
+
+    onSaveClick : function (btn, e, eOpts){
+      var win = btn.up('window'),
+          form = win.down('form'),
+          values = form.getValues(),
+          record = form.getRecord(),
+          grid = Ext.ComponentQuery.query('dxsgrid')[0],
+          store = grid.getStore();
+
+          if (record){
+            record.set(values);
+          }else{
+            var dxs = Ext.create('SysContest.model.DisciplineSubject',{
+              idDiscipline : values.idDiscipline,
+              idSubject : values.idSubject
+             });
+            store.insert(0,dxs);
+          }
+          store.sync();
+          win.close();
     }   
 
 });
