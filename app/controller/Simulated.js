@@ -15,6 +15,12 @@ Ext.define('SysContest.controller.Simulated', {
        'SysContest.view.simulated.FilterForm'
     ],
 
+    param : {
+        discipline : 0,
+        subject : 0,
+        role : ''
+    },
+
     init : function (application) {
         this.control({
           'simulatedwindow' : {
@@ -28,16 +34,36 @@ Ext.define('SysContest.controller.Simulated', {
           }, 
           'simulatedwindow button#checkSimulated' : {
             click : this.onCkechAnswers
-          } 
+          },
+          'filterform combobox#comboDiscipline' : {
+             select  : this.onSelectDiscipline
+          }
 
         });
     },
 
     onCreateSimulated : function (btn , e, eOpts){
       panel = Ext.ComponentQuery.query('simulatedpanel')[0];
-    
-      var store = Ext.create('SysContest.store.Simulateds');
       
+      var store;
+      if (this.param.discipline === 0){
+         store = Ext.create('SysContest.store.Simulateds');
+      } else {
+        var discipline = this.param.discipline;
+        store = Ext.create('Ext.data.store', {
+                  model : 'SysContest.model.Question',
+                  proxy : {
+                      type: 'ajax',
+                      url: 'php/simulated/simulated.php?discipline='+discipline,
+                      reader: {
+                           type: 'json',
+                           root: 'data'
+                       }
+                  },
+                  autoLoad : true
+                });
+      }
+ 
       store.on('load', function(s){
 
       var tpl = Ext.create('Ext.XTemplate',
@@ -148,6 +174,14 @@ Ext.define('SysContest.controller.Simulated', {
         icon: Ext.Msg.WARNING
       });
     } 
+  },
+
+  onSelectDiscipline : function (combo, records, eOpts ){
+    //console.log(combo.getValue());
+    this.param.discipline = combo.getValue();
+    var record = combo.findRecordByValue(combo.getValue());
+    console.log(record.get('idDiscipline'));
+   // console.log(this.param.discipline);
   }
 
 });

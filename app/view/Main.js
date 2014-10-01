@@ -23,7 +23,7 @@ Ext.define('SysContest.view.Main', {
         collapsible: true,
         xtype: 'panel',
         title: 'SYS CONTEST',
-        width: 200,
+        width: 250,
         layout : 'fit',
         items : [
             {
