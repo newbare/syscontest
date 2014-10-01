@@ -29,6 +29,9 @@ Ext.define('SysContest.controller.DisciplineSubject', {
           },
           'dxsgrid button#deleteDXS' : {
             click : this.onDeleteClick
+          },
+          'dxsform button#cancelDXS' : {
+            click : this.onCancelClick
           }
         });
     },
@@ -64,6 +67,13 @@ Ext.define('SysContest.controller.DisciplineSubject', {
            Ext.MessageBox.alert('Mensagem','Relação removida!');
         } 
       });
+    },
+
+    onCancelClick : function (btn, e, eOpts){
+      var win = btn.up('window');
+      var form = win.down('form');
+      form.getForm().reset();
+      win.close();
     }   
 
 });
