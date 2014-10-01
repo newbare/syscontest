@@ -27,6 +27,9 @@ Ext.define('SysContest.controller.DisciplineSubject', {
           'dxswindow button#addDXS' : {
             click : this.onAddClick
           },
+          'dxsgrid' : {
+            itemdblclick : this.onEditClick
+          },
           'dxsgrid button#deleteDXS' : {
             click : this.onDeleteClick
           },
@@ -74,6 +77,12 @@ Ext.define('SysContest.controller.DisciplineSubject', {
       var form = win.down('form');
       form.getForm().reset();
       win.close();
+    },
+
+    onEditClick : function (grid, record, item, index, e, eOpts){
+        var win = this.openForm('Editar Relação');
+        var form = win.down('form');
+        form.loadRecord(record);
     }   
 
 });
