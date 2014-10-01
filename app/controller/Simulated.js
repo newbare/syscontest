@@ -37,6 +37,12 @@ Ext.define('SysContest.controller.Simulated', {
           },
           'filterform combobox#comboDiscipline' : {
              select  : this.onSelectDiscipline
+          },
+          'filterform combobox#comboSubject' : {
+             select  : this.onSelectSubject
+          },
+          'filterform combobox#comboRole' : {
+             select  : this.onSelectRole
           }
 
         });
@@ -49,19 +55,23 @@ Ext.define('SysContest.controller.Simulated', {
       if (this.param.discipline === 0){
          store = Ext.create('SysContest.store.Simulateds');
       } else {
-        var discipline = this.param.discipline;
-        store = Ext.create('Ext.data.store', {
-                  model : 'SysContest.model.Question',
-                  proxy : {
-                      type: 'ajax',
-                      url: 'php/simulated/simulated.php?discipline='+discipline,
-                      reader: {
-                           type: 'json',
-                           root: 'data'
-                       }
-                  },
-                  autoLoad : true
-                });
+        
+        var discipline = this.param.discipline,
+            subject = this.param.subject,
+            role = this.param.role;
+        
+        store = Ext.create('Ext.data.Store', {
+            model : 'SysContest.model.Question',
+            proxy : {
+                type: 'ajax',
+                url: 'php/simulated/simulated.php?discipline='+discipline+'&subject='+subject+'&role='+role,
+                reader: {
+                     type: 'json',
+                     root: 'data'
+                 }
+            },
+            autoLoad : true
+        });
       }
  
       store.on('load', function(s){
@@ -177,11 +187,21 @@ Ext.define('SysContest.controller.Simulated', {
   },
 
   onSelectDiscipline : function (combo, records, eOpts ){
-    //console.log(combo.getValue());
-    this.param.discipline = combo.getValue();
     var record = combo.findRecordByValue(combo.getValue());
     console.log(record.get('idDiscipline'));
-   // console.log(this.param.discipline);
+    this.param.discipline = record.get('idDiscipline');
+  },
+
+  onSelectSubject : function (combo, records, eOpts ){
+    var record = combo.findRecordByValue(combo.getValue());
+    console.log(record.get('idSubject'));
+    this.param.subject = record.get('idSubject');
+  },
+
+  onSelectRole : function (combo, records, eOpts ){
+    var record = combo.findRecordByValue(combo.getValue());
+    console.log(record.get('role'));
+    this.param.role = record.get('role');
   }
 
 });

@@ -5,7 +5,30 @@
  $start = $_REQUEST['start'];
  $limit = $_REQUEST['limit'];
 
-	$queryString = "SELECT * FROM question ORDER BY RAND() LIMIT $start,  $limit ";
+ $queryString = '';
+ 
+ if (isset($_POST['discipline']) && isset($_POST['subject']) && isset($_POST['role'])){
+  $discipline = $_POST['discipline'];
+  $subject =  $_POST['subject'];
+  $role = $_POST['role'];
+
+  $queryString = "SELECT DISTINCT  Q.idQuestion, Q.idExam, Q.statement, Q.answer, Q.optionA, Q.optionB, Q.optionC, Q.optionD, Q.optionE
+						FROM DISCIPLINE AS D, DISCIPLINE_SUBJECT AS D_S, SUBJECT AS S, QUESTION AS Q, EXAM AS E
+						WHERE S.idSubject IN (SELECT DISTINCT idSubject 
+						FROM DISCIPLINE_SUBJECT
+						WHERE idDiscipline = $discipline ) AND
+	  Q.idQuestion in (SELECT DISTINCT idQuestion 
+					  FROM SUBJECT_QUESTION
+					  WHERE idSubject = $subject ) AND
+	  E.idExam in ( SELECT DISTINCT idExam 
+					FROM EXAM
+					WHERE role = '".$role."')
+     ORDER BY RAND() LIMIT $start,  $limit";
+ }
+ else {
+		 	$queryString = "SELECT * FROM question ORDER BY RAND() LIMIT $start,  $limit ";
+ }
+
 
 	//execute sql query
 	$query = mysql_query($queryString) or die(mysql_error());
